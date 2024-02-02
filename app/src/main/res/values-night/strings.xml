@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="imageIcon">imageIcon</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="feedback">Feedback:</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="more_apps">More Apps</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="invite_a_friend">Invite a friend</string>
+</resources>

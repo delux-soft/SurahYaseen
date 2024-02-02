@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="30dp"
+    tools:context=".fragments.HomeFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/settingTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_bold"
+            android:text="@string/app_name"
+            android:textColor="@color/baseColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <FrameLayout
+                    android:id="@+id/surahYaseen"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    app:cardUseCompatPadding="true"
+                    android:background="@drawable/surah_yaseen"
+                    app:layout_constraintEnd_toStartOf="@id/allahNames"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/allahNames"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    app:cardUseCompatPadding="true"
+                    android:background="@drawable/allah_names"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/surahYaseen"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/prophetNames"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    android:background="@drawable/prophet_ic"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toStartOf="@id/surahRehman"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/surahYaseen">
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/surahRehman"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    app:cardUseCompatPadding="true"
+                    android:background="@drawable/surah_rehman"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/prophetNames"
+                    app:layout_constraintTop_toBottomOf="@id/allahNames">
+
+                </FrameLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

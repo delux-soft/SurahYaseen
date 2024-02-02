@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Surah Yaseen</string>
+    <string name="imageIcon">imageIcon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="feedback">Feedback:</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="more_apps">More Apps</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="invite_a_friend">Invite a friend</string>
+</resources>
