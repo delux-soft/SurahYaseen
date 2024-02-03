@@ -18,7 +18,6 @@
             android:id="@+id/settingTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/lato_bold"
             android:text="@string/app_name"
             android:textColor="@color/baseColor"
             android:textSize="20sp"
@@ -32,7 +31,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@id/header">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,6 +41,7 @@
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topLayer"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
                 android:paddingVertical="10dp"
@@ -51,7 +51,6 @@
                     android:id="@+id/surahYaseen"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
-                    app:cardUseCompatPadding="true"
                     android:background="@drawable/surah_yaseen"
                     app:layout_constraintEnd_toStartOf="@id/allahNames"
                     app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +63,6 @@
                     android:id="@+id/allahNames"
                     android:layout_width="0dp"
                     android:layout_height="250dp"
-                    app:cardUseCompatPadding="true"
                     android:background="@drawable/allah_names"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/surahYaseen"
@@ -77,7 +75,6 @@
                     android:layout_width="0dp"
                     android:layout_height="250dp"
                     android:background="@drawable/prophet_ic"
-                    app:cardUseCompatPadding="true"
                     app:layout_constraintEnd_toStartOf="@id/surahRehman"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/surahYaseen">
@@ -88,7 +85,6 @@
                     android:id="@+id/surahRehman"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
-                    app:cardUseCompatPadding="true"
                     android:background="@drawable/surah_rehman"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/prophetNames"
@@ -99,7 +95,206 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottomLayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topLayer">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/supplications"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="10dp"
+                    app:contentPaddingBottom="20dp"
+                    app:contentPaddingTop="20dp"
+                    app:layout_constraintEnd_toStartOf="@id/fourQul"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|top"
+                        android:contentDescription="@string/imageIcon"
+                        android:src="@drawable/supplications_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/arial"
+                        android:text="Supplications" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/fourQul"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="10dp"
+                    app:contentPaddingBottom="20dp"
+                    app:contentPaddingTop="20dp"
+                    app:layout_constraintEnd_toStartOf="@id/sixQalma"
+                    app:layout_constraintStart_toEndOf="@id/supplications"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/imageIcon"
+                        android:src="@drawable/qul_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/arial"
+                        android:text="4 Qul" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/sixQalma"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="10dp"
+                    app:contentPaddingBottom="20dp"
+                    app:contentPaddingTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/fourQul"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/imageIcon"
+                        android:src="@drawable/kalma_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/arial"
+                        android:text="6 Kalimas" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/calender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="10dp"
+                    app:contentPaddingBottom="20dp"
+                    app:contentPaddingTop="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/qibla"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/supplications"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/imageIcon"
+                        android:src="@drawable/calendar_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/arial"
+                        android:text="Calender" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/qibla"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="10dp"
+                    app:contentPaddingBottom="20dp"
+                    app:contentPaddingTop="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tasbeeh"
+                    app:layout_constraintStart_toEndOf="@id/calender"
+                    app:layout_constraintTop_toBottomOf="@id/fourQul"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/imageIcon"
+                        android:src="@drawable/qibla_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/arial"
+                        android:text="Qibla Direction" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/tasbeeh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="10dp"
+                    app:contentPaddingBottom="20dp"
+                    app:contentPaddingTop="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/qibla"
+                    app:layout_constraintTop_toBottomOf="@id/sixQalma"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:contentDescription="@string/imageIcon"
+                        android:src="@drawable/tasbeeh_ic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|bottom"
+                        android:layout_marginTop="50dp"
+                        android:fontFamily="@font/arial"
+                        android:text="Tasbeeh Counter" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </ScrollView>
 

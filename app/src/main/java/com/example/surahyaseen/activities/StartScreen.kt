@@ -1,8 +1,10 @@
 package com.example.surahyaseen.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import com.example.surahyaseen.MainActivity
 import com.example.surahyaseen.R
 import com.example.surahyaseen.databinding.ActivitySplashScreenBinding
 import kotlinx.coroutines.delay
@@ -36,6 +38,8 @@ class StartScreen : AppCompatActivity() {
 
             override fun onFinish() {
                 // DO something when 5 seconds is up
+                startActivity(Intent(this@StartScreen, MainActivity::class.java))
+                finish()
 
             }
         }.start()
