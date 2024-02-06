@@ -9,7 +9,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/header"
+        android:id="@+id/homeHeader"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,11 +28,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/header">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeHeader">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/body"
@@ -98,7 +99,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/bottomLayer"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/topLayer">
 
@@ -106,14 +107,17 @@
                     android:id="@+id/supplications"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
                     app:contentPaddingBottom="20dp"
                     app:contentPaddingTop="20dp"
                     app:layout_constraintEnd_toStartOf="@id/fourQul"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/baseColor"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:strokeWidth="0dp">
 
                     <ImageView
@@ -129,7 +133,9 @@
                         android:layout_gravity="center|bottom"
                         android:layout_marginTop="50dp"
                         android:fontFamily="@font/arial"
-                        android:text="Supplications" />
+                        android:textColor="@color/black"
+                        android:text="Supplications"
+                        android:textSize="11sp" />
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -137,14 +143,17 @@
                     android:id="@+id/fourQul"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
                     app:contentPaddingBottom="20dp"
                     app:contentPaddingTop="20dp"
                     app:layout_constraintEnd_toStartOf="@id/sixQalma"
                     app:layout_constraintStart_toEndOf="@id/supplications"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/baseColor"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:strokeWidth="0dp">
 
                     <ImageView
@@ -160,21 +169,26 @@
                         android:layout_gravity="center|bottom"
                         android:layout_marginTop="50dp"
                         android:fontFamily="@font/arial"
-                        android:text="4 Qul" />
+                        android:text="4 Qul"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/sixQalma"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
                     app:contentPaddingBottom="20dp"
                     app:contentPaddingTop="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/fourQul"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/baseColor"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:strokeWidth="0dp">
 
                     <ImageView
@@ -190,19 +204,24 @@
                         android:layout_gravity="center|bottom"
                         android:layout_marginTop="50dp"
                         android:fontFamily="@font/arial"
-                        android:text="6 Kalimas" />
+                        android:text="6 Kalimas"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/calender"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
                     app:contentPaddingBottom="20dp"
                     app:contentPaddingTop="20dp"
+                    app:rippleColor="@color/baseColor"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/qibla"
                     app:layout_constraintStart_toStartOf="parent"
@@ -222,20 +241,24 @@
                         android:layout_gravity="center|bottom"
                         android:layout_marginTop="50dp"
                         android:fontFamily="@font/arial"
-                        android:text="Calender" />
+                        android:text="Calender"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/qibla"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="20dp"
-
+                    android:layout_marginTop="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
                     app:contentPaddingBottom="20dp"
                     app:contentPaddingTop="20dp"
+                    app:rippleColor="@color/baseColor"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/tasbeeh"
                     app:layout_constraintStart_toEndOf="@id/calender"
@@ -255,19 +278,24 @@
                         android:layout_gravity="center|bottom"
                         android:layout_marginTop="50dp"
                         android:fontFamily="@font/arial"
-                        android:text="Qibla Direction" />
+                        android:text="Qibla Direction"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/tasbeeh"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
                     app:contentPaddingBottom="20dp"
                     app:contentPaddingTop="20dp"
+                    app:rippleColor="@color/baseColor"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/qibla"
@@ -287,7 +315,9 @@
                         android:layout_gravity="center|bottom"
                         android:layout_marginTop="50dp"
                         android:fontFamily="@font/arial"
-                        android:text="Tasbeeh Counter" />
+                        android:text="Tasbeeh Counter"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
                 </com.google.android.material.card.MaterialCardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -296,7 +326,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

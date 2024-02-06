@@ -4,11 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import com.example.surahyaseen.MainActivity
-import com.example.surahyaseen.R
 import com.example.surahyaseen.databinding.ActivitySplashScreenBinding
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class StartScreen : AppCompatActivity() {
     private val binding by lazy {

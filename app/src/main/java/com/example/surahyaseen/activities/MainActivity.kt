@@ -1,16 +1,15 @@
-package com.example.surahyaseen
+package com.example.surahyaseen.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.surahyaseen.R
 import com.example.surahyaseen.databinding.ActivityMainBinding
 
 
 typealias ID = R.id
+typealias raw = R.raw
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy {
@@ -21,12 +20,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val navHostFragment =
-            supportFragmentManager.findFragmentById(ID.hostFragment) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.hostFragment) as NavHostFragment
         val navController = navHostFragment.navController
 
 
         binding.bottomNavigation.setupWithNavController(navController)
-
 
 
     }
