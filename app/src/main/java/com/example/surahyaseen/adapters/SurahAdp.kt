@@ -1,32 +1,22 @@
 package com.example.surahyaseen.adapters
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.example.surahyaseen.databinding.SurahItemBinding
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.surahyaseen.fragments.SurahImageFragment
 import com.example.surahyaseen.model.SurahModel
 
-class SurahAdp(private val context: Context, private val list: List<SurahModel>) :
-    RecyclerView.Adapter<SurahAdp.SurahVH>() {
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SurahVH {
-        val binding = SurahItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return SurahVH(binding)
-    }
+class SurahAdp(fragment: Fragment, private val list: List<SurahModel>) :
+    FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    override fun onBindViewHolder(holder: SurahVH, position: Int) {
-        val model = list[position]
+
+    override fun createFragment(position: Int): Fragment {
+        return SurahImageFragment(list[position].image)
     }
 
 
-    inner class SurahVH(private val binding: SurahItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-
-    }
 }

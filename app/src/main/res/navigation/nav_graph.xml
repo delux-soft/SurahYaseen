@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home">
+    app:startDestination="@id/main">
 
 
     <fragment
-        android:id="@+id/home"
-        android:name="com.example.surahyaseen.fragments.HomeFragment"
-        tools:layout="@layout/fragment_home">
-
+        android:id="@+id/main"
+        android:name="com.example.surahyaseen.fragments.MainFragment"
+        tools:layout="@layout/fragment_main" >
 
         <action
             android:id="@+id/homeToSurah"
+            app:destination="@id/surah"
             app:enterAnim="@animator/nav_default_enter_anim"
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
@@ -28,6 +28,7 @@
 
         <action
             android:id="@+id/homeToNames"
+            app:destination="@id/names"
             app:enterAnim="@animator/nav_default_enter_anim"
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
@@ -38,13 +39,25 @@
                 app:argType="string" />
 
         </action>
-
-
     </fragment>
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.surahyaseen.fragments.HomeFragment"
+        tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/setting"
         android:name="com.example.surahyaseen.fragments.SettingFragment"
-        tools:layout="@layout/fragment_setting">
+        tools:layout="@layout/fragment_setting" />
+
+    <fragment
+        android:id="@+id/surah"
+        android:name="com.example.surahyaseen.fragments.SurahFragment"
+        tools:layout="@layout/fragment_surah">
 
     </fragment>
+
+    <fragment
+        android:id="@+id/names"
+        android:name="com.example.surahyaseen.fragments.NamesFragment"
+        tools:layout="@layout/fragment_names" />
 </navigation>

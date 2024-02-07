@@ -19,12 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.hostFragment) as NavHostFragment
-        val navController = navHostFragment.navController
 
-
-        binding.bottomNavigation.setupWithNavController(navController)
 
 
     }

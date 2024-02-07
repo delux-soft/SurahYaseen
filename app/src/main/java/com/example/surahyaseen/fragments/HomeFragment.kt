@@ -5,14 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.surahyaseen.activities.ID
 import com.example.surahyaseen.databinding.FragmentHomeBinding
+import com.example.surahyaseen.enums.MainMode.HomeMode
 
+
+interface HomeListener {
+    fun onHomeClick(value: HomeMode)
+
+}
 
 class HomeFragment : Fragment() {
     private var _homeBinding: FragmentHomeBinding? = null
     private val homeBinding get() = _homeBinding!!
+
+    private var listener: HomeListener? = null
+
+    fun setHomeListener(listener: HomeListener) {
+        this.listener = listener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,44 +36,33 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         bindListeners()
     }
 
     private fun bindListeners() {
-        val bundle = Bundle()
+
         homeBinding.apply {
 
             surahYaseen.setOnClickListener {
-                bundle.putString("surahName", yaseen)
-                navigateToSurah(bundle)
-
+                listener?.onHomeClick(HomeMode.YASEEN)
             }
 
             surahRehman.setOnClickListener {
-                bundle.putString("surahName", rehman)
-                navigateToSurah(bundle)
-
+                listener?.onHomeClick(HomeMode.REHMAN)
             }
 
             allahNames.setOnClickListener {
-                bundle.putString("name", allahName)
-                navigateToNames(bundle)
+                listener?.onHomeClick(HomeMode.ALLAH)
             }
 
             prophetNames.setOnClickListener {
-                bundle.putString("name", prophetName)
-                navigateToNames(bundle)
+                listener?.onHomeClick(HomeMode.PROPHET)
             }
         }
     }
 
-    private fun navigateToNames(bundle: Bundle) {
-        findNavController().navigate(ID.homeToNames, bundle)
-    }
 
-    private fun navigateToSurah(bundle: Bundle) {
-        findNavController().navigate(ID.homeToSurah, bundle)
-    }
 
 
     companion object {
