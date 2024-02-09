@@ -4,25 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.NamesFragment">
+    tools:context=".fragments.QalmaFragment">
 
     <include
-        android:id="@+id/namesHeader"
+        android:id="@+id/header"
         layout="@layout/header_layout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:paddingHorizontal="45dp"
+        android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toTopOf="@id/bottom"
-        app:layout_constraintTop_toBottomOf="@id/namesHeader">
-
+        app:layout_constraintTop_toBottomOf="@id/header">
 
         <ImageView
-            android:id="@+id/surahBack"
+            android:id="@+id/bodyHead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -32,33 +29,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <TextView
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/arial"
-            android:text="@string/prophet_names"
+            android:text="@string/_6_qalma"
             android:textColor="@color/white"
             android:textSize="19sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/surahBack"
-            app:layout_constraintEnd_toEndOf="@id/surahBack"
-            app:layout_constraintStart_toStartOf="@id/surahBack"
-            app:layout_constraintTop_toTopOf="@id/surahBack" />
+            app:layout_constraintBottom_toBottomOf="@id/bodyHead"
+            app:layout_constraintEnd_toEndOf="@id/bodyHead"
+            app:layout_constraintStart_toStartOf="@id/bodyHead"
+            app:layout_constraintTop_toTopOf="@id/bodyHead" />
+
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/namesRecycler"
+            android:id="@+id/qalmaVP"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/surahBack" />
+            app:layout_constraintTop_toBottomOf="@id/bodyHead" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <include
         android:id="@+id/bottom"
         layout="@layout/bottom_layout" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.viewpager2.widget.ViewPager2
-import com.bumptech.glide.Glide
 import com.example.surahyaseen.R
-import com.example.surahyaseen.activities.ID
 import com.example.surahyaseen.adapters.SurahAdp
 import com.example.surahyaseen.databinding.FragmentSurahBinding
 import com.example.surahyaseen.model.SurahModel
@@ -26,7 +23,7 @@ class SurahFragment : Fragment() {
     private var _surahBinding: FragmentSurahBinding? = null
     private val surahBinding get() = _surahBinding!!
 
-    private val mainVM by viewModels<MainVM>()
+    private val mainVM by viewModels<MainVM<SurahModel>>()
 
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
     override fun onCreateView(
