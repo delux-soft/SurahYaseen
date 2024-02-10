@@ -59,10 +59,16 @@ class HomeFragment : Fragment() {
             prophetNames.setOnClickListener {
                 listener?.onHomeClick(HomeMode.PROPHET)
             }
+
+            sixQalma.setOnClickListener {
+                listener?.onHomeClick(HomeMode.KALMA)
+            }
+
+            fourQul.setOnClickListener {
+                listener?.onHomeClick(HomeMode.QUL)
+            }
         }
     }
-
-
 
 
     companion object {

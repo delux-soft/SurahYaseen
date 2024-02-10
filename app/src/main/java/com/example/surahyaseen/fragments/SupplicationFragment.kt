@@ -6,37 +6,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.surahyaseen.adapters.QalmaAdp
-import com.example.surahyaseen.databinding.FragmentQalmaBinding
-import com.example.surahyaseen.model.QalmaModel
-import com.example.surahyaseen.utils.Extension.addCarouselEffect
+import com.example.surahyaseen.R
+import com.example.surahyaseen.databinding.FragmentSupplicationBinding
+import com.example.surahyaseen.model.SupplicationModel
+import com.example.surahyaseen.model.SurahModel
 import com.example.surahyaseen.viewModel.MainVM
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+class SupplicationFragment : Fragment() {
+    private var _supplicationBinding: FragmentSupplicationBinding? = null
+    private val supplicationBinding get() = _supplicationBinding!!
 
-class QalmaFragment : Fragment() {
-    private var _qalmaBinding: FragmentQalmaBinding? = null
-    private val qalmaBinding get() = _qalmaBinding!!
 
-    private val mainVM by viewModels<MainVM<QalmaModel>>()
+    private val mainVM by viewModels<MainVM<SupplicationModel>>()
+
+    private val coroutineScope = CoroutineScope(Dispatchers.Main)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _qalmaBinding = FragmentQalmaBinding.inflate(layoutInflater, container, false)
-        CoroutineScope(Dispatchers.Main).launch {
-            mainVM.getQalma()
+        _supplicationBinding = FragmentSupplicationBinding.inflate(layoutInflater, container, false)
+
+        coroutineScope.launch {
+
         }
-        return qalmaBinding.root
+        return supplicationBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindObserver()
-
     }
 
     private fun bindObserver() {
@@ -45,10 +48,9 @@ class QalmaFragment : Fragment() {
         }
     }
 
-    private fun setAdp(it: List<QalmaModel>) {
-        val adapter = QalmaAdp()
-        qalmaBinding.qalmaVP.addCarouselEffect()
-        qalmaBinding.qalmaVP.adapter = adapter
-        adapter.submitList(it)
+    private fun setAdp(it: List<SupplicationModel>) {
+
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.example.surahyaseen.repo
 import com.example.surahyaseen.activities.raw
 import com.example.surahyaseen.model.NamesModel
 import com.example.surahyaseen.model.QalmaModel
+import com.example.surahyaseen.model.QulModel
 import com.example.surahyaseen.model.SurahModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -1583,5 +1584,49 @@ class MainRepo {
                 )
             )
         }
+    }
+
+
+    suspend fun getQul(): List<QulModel> {
+        return withContext(Dispatchers.IO) {
+            listOf(
+                QulModel(
+                    "سورت الكٰفِرُونَۙ",
+                    "بِسمِ ٱللَّهِ ٱلرَّحمَٰنِ ٱلرَّحِيمِ\n" +
+                            "\n" +
+                            "(1)قُلْ يَآ اَيُّـهَا الْكَافِرُوْنَ(2) لَآ اَعْبُدُ مَا تَعْبُدُوْنَ(3) وَلَآ اَنْتُـمْ عَابِدُوْنَ مَآ اَعْبُدُ(4) وَلَآ اَنَا عَابِدٌ مَّا عَبَدْتُّـمْ(5) وَلَآ اَنْـتُـمْ عَابِدُوْنَ مَآ اَعْبُدُ(6) لَكُمْ دِيْنُكُمْ وَلِىَ دِيْنِ\nِ",
+                    " اور جس (خدا) کی میں عبادت کرتا ہوں اس کی تم عبادت نہیں کرتے  اور( میں پھر کہتا ہوں کہ) جن کی تم پرستش کرتے ہوں ان کی میں پرستش کرنے والا نہیں ہوں  اور نہ تم اس کی بندگی کرنے والے (معلوم ہوتے) ہو جس کی میں بندگی کرتا ہوں  تم اپنے دین پر میں اپنے دین پر",
+                    "In the name of Allah, The Most Gracious and The Most Merciful\n" +
+                            " Say: O disbelievers! I worship not that which ye worship; Nor worship ye that which I worship. And I shall not worship that which ye worship. Nor will ye worship that which I worship. Unto you your religion, and unto me my religion.\n"
+                ), QulModel(
+                    "سورت ٱلفَلَقَِۙ",
+                    "بِسمِ ٱللَّهِ ٱلرَّحمَٰنِ ٱلرَّحِيمِ\n" +
+                            "(1)قُل أَعُوذُ بِرَبِّ ٱلفَلَقِ (2)مِن شَرِّ مَا خَلَقَ (3)وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ (4) وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِي ٱلعُقَدِ (5)وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ\nَِ",
+                    "اللہ کے نام سے جو بڑا مہربان اور خاص رحم کرنے والا ہے۔ کہو، میں صبح کے رب کی پناہ مانگتا ہوں۔ اس چیز کے شر سے جو اس نے پیدا کی۔ اور اندھیرے کے شر سے جب وہ ٹھہر جائے اور گرہوں میں پھونکنے والوں کے شر سے۔ اور حسد کرنے والے کے شر سے جب وہ حسد کرے",
+                    " In the name of Allah, The Most Gracious and The Most Merciful\n" +
+                            "In the name of Allah, the Entirely Merciful, the Especially Merciful. Say, “I seek refuge in the Lord of daybreak. From the evil of that which He created. And from the evil of darkness when it settles. And from the evil of the blowers in knots. And from the evil of an envier when he envies.\n"
+                ), QulModel(
+                    "سورۃ الاخلاصَۙ",
+                    "بِسمِ ٱللهِ ٱلرَّحمَٰنِ ٱلرَّحِيم\n" +
+                            " (1)قُلْ هُوَ اللّـٰهُ اَحَدٌ(2) اَللَّـهُ الصَّمَدُ(3) لَمْ يَلِدْ وَلَمْ يُوْلَدْ(4) وَلَمْ يَكُنْ لَّـهٝ كُفُوًا اَحَدٌ \n" +
+                            "\n" +
+                            " کہو کہ وہ (ذات پاک جس کا نام) الله (ہے) ایک ہے  معبود برحق جو بےنیاز ہے  نہ کسی کا باپ ہے اور نہ کسی کا بیٹا  اور کوئی اس کا ہمسر نہیں\nِ",
+                    "کہو کہ وہ (ذات پاک جس کا نام) الله (ہے) ایک ہے  معبود برحق جو بےنیاز ہے  نہ کسی کا باپ ہے اور نہ کسی کا بیٹا  اور کوئی اس کا ہمسر نہیں",
+                    "In the name of Allah, The Most Gracious and The Most Merciful\n" +
+                            "Say: He is Allah, the One! Allah, the eternal Besought of all! He begetteth not nor was begotten. And there is none comparable unto Him.\n"
+                ), QulModel(
+                    "سورت الناس َۙ",
+                    "بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِیْمِ\n" +
+                            "\n" +
+                            "(1)قُلْ اَعُوْذُ بِرَبِّ النَّاسِ(2) مَلِكِ النَّاسِ(3) اِلٰـهِ النَّاسِ(4) مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ(5) اَلَّـذِىْ يُوَسْوِسُ فِىْ صُدُوْرِ النَّاسِ(6) مِنَ الْجِنَّـةِ وَالنَّاسِ  \n",
+                    "کہو کہ میں لوگوں کے پروردگار کی پناہ مانگتا ہوں-  (یعنی) لوگوں کے حقیقی بادشاہ ک لوگوں کے معبود برحق کی  (شیطان) وسوسہ انداز کی برائی سے جو (خدا کا نام سن کر) پیچھے ہٹ جاتا ہے جو لوگوں کے دلوں میں وسوسے ڈالتا ہے وہ جنّات میں سے (ہو) یا انسانوں میں سے",
+                    "Merciful\n" +
+                            "(1) Say, “I seek refuge in the Lord of mankind, (2) The Sovereign of mankind. (3) The God of mankind,\n" +
+                            "(4) From the evil of the retreating whisperer – (5) Who whispers [evil] into the breasts of mankind \n" +
+                            "(6) From among the jinn and mankind.”\n"
+                )
+            )
+        }
+
     }
 }

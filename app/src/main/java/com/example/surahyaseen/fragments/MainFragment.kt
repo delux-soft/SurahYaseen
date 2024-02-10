@@ -138,7 +138,7 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
             }
 
             HomeMode.KALMA -> {
-
+                findNavController().navigate(ID.homeToQalma)
             }
 
 
@@ -147,7 +147,7 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
             }
 
             HomeMode.QUL -> {
-
+                findNavController().navigate(ID.homeToQul)
             }
 
 
@@ -181,9 +181,6 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
 
         }
     }
-
-
-
 
 
 }

@@ -56,5 +56,12 @@ class MainVM<T> : ViewModel() {
         }
     }
 
+    fun getQul() {
+        viewModelScope.launch {
+            val list = mainRepo.getQul() as List<T>
+            mutableLiveData.postValue(list)
+        }
+    }
+
 
 }
