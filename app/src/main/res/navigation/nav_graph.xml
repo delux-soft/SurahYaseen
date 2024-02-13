@@ -54,6 +54,13 @@
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
             app:popExitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/homeToSupp"
+            app:destination="@id/supplication"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 
     <fragment
@@ -85,5 +92,23 @@
         android:id="@+id/qul"
         android:name="com.example.surahyaseen.fragments.QulFragment"
         tools:layout="@layout/fragment_qul" />
+    <fragment
+        android:id="@+id/supplication"
+        android:name="com.example.surahyaseen.fragments.SupplicationFragment"
+        tools:layout="@layout/fragment_supplication">
+
+        <action
+            android:id="@+id/supplicationToInner"
+            app:destination="@id/supplicationInner"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/supplicationInner"
+        android:name="com.example.surahyaseen.fragments.SupplicationInner"
+        tools:layout="@layout/fragment_supplication_inner" />
 
 </navigation>

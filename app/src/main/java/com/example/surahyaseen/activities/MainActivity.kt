@@ -10,6 +10,8 @@ import com.example.surahyaseen.databinding.ActivityMainBinding
 
 typealias ID = R.id
 typealias raw = R.raw
+typealias drawable = R.drawable
+
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy {

@@ -4,31 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="20dp"
-        android:background="@drawable/border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeWidth="0dp">
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
-
             <TextView
-                android:id="@+id/qulName"
+                android:id="@+id/supplicationName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="سورت الناس"
+                android:text="Forgiveness"
                 android:textColor="@color/baseColor"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -36,33 +30,46 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
             <TextView
-                android:id="@+id/qalmaArabic"
+                android:id="@+id/supplicationArabic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:lineSpacingExtra="5dp"
+                android:text="لَآ اِلٰهَ اِلَّا اﷲُ مُحَمَّدٌ رَّسُوْلُ اﷲِ"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/qulName" />
+                app:layout_constraintTop_toBottomOf="@id/supplicationName" />
 
             <TextView
-                android:id="@+id/qalmaEng"
+                android:id="@+id/supplicationUrdu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/baseColor"
+                android:text="لَآ اِلٰهَ اِلَّا اﷲُ مُحَمَّدٌ رَّسُوْلُ اﷲِ"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/supplicationArabic" />
+
+            <TextView
+                android:id="@+id/supplicationEng"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:lineSpacingExtra="5dp"
                 android:text="There is none worthy of worship except ALLAH, (and) Muhammad (P.B.U.H) is the Messenger of ALLAH."
-                android:textColor="@color/black"
+                android:textColor="@color/baseColor"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/qalmaArabic" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/supplicationUrdu" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

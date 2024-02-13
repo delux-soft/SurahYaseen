@@ -55,4 +55,9 @@ class QulFragment : Fragment() {
     }
 
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _qulBinding = null
+    }
+
 }

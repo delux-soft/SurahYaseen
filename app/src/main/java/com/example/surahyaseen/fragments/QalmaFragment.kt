@@ -51,4 +51,10 @@ class QalmaFragment : Fragment() {
         qalmaBinding.qalmaVP.adapter = adapter
         adapter.submitList(it)
     }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _qalmaBinding = null
+    }
 }

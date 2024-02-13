@@ -28,4 +28,9 @@ class SurahImageFragment(private val path: String) : Fragment() {
         Glide.with(requireActivity()).load(path).into(surahBinding.imageView)
     }
 
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _surahBinding = null
+    }
 }

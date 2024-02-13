@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.surahyaseen.databinding.SupplicationItemBinding
-import com.example.surahyaseen.model.SupplicationInner
 import com.example.surahyaseen.model.SupplicationModel
 
 class SupplicationAdp(
     private val list: List<SupplicationModel>,
-    val callback: (List<SupplicationInner>)
+    private val callback: (SupplicationModel) -> Unit
 ) :
     RecyclerView.Adapter<SupplicationAdp.SupplicationVH>() {
 
@@ -32,7 +31,12 @@ class SupplicationAdp(
     inner class SupplicationVH(private val binding: SupplicationItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: SupplicationModel) {
+            binding.name.text = model.name
+            binding.drawable.setImageResource(model.drawable)
 
+            binding.card.setOnClickListener {
+                callback(model)
+            }
         }
     }
 }

@@ -86,5 +86,10 @@ class NamesFragment : Fragment() {
     }
 
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _nameBinding = null
+    }
+
 
 }

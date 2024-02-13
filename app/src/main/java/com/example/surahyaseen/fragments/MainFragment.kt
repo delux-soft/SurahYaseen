@@ -152,7 +152,7 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
 
 
             HomeMode.SUPPLICATION -> {
-
+                findNavController().navigate(ID.homeToSupp)
             }
         }
     }
@@ -180,6 +180,12 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
 
 
         }
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _mainBinding = null
     }
 
 

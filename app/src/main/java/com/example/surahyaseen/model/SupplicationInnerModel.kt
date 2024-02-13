@@ -1,6 +1,6 @@
 package com.example.surahyaseen.model
 
-data class SupplicationInner(
+data class SupplicationInnerModel(
     val name: String,
     val duaArabic: String,
     val duaUrdu: String,

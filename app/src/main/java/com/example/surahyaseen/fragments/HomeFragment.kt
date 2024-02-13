@@ -67,7 +67,16 @@ class HomeFragment : Fragment() {
             fourQul.setOnClickListener {
                 listener?.onHomeClick(HomeMode.QUL)
             }
+            supplications.setOnClickListener {
+                listener?.onHomeClick(HomeMode.SUPPLICATION)
+            }
         }
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _homeBinding = null
     }
 
 

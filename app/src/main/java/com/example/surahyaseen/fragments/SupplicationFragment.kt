@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.example.surahyaseen.R
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.surahyaseen.activities.ID
+import com.example.surahyaseen.adapters.SupplicationAdp
 import com.example.surahyaseen.databinding.FragmentSupplicationBinding
+import com.example.surahyaseen.model.SupplicationInnerModel
 import com.example.surahyaseen.model.SupplicationModel
-import com.example.surahyaseen.model.SurahModel
 import com.example.surahyaseen.viewModel.MainVM
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +35,7 @@ class SupplicationFragment : Fragment() {
         _supplicationBinding = FragmentSupplicationBinding.inflate(layoutInflater, container, false)
 
         coroutineScope.launch {
-
+            mainVM.getSupplication()
         }
         return supplicationBinding.root
     }
@@ -49,7 +52,30 @@ class SupplicationFragment : Fragment() {
     }
 
     private fun setAdp(it: List<SupplicationModel>) {
+        val adp = SupplicationAdp(it, ::onClick)
+        supplicationBinding.supplicationRecycler.layoutManager =
+            GridLayoutManager(requireContext(), 2)
+        supplicationBinding.supplicationRecycler.adapter = adp
+    }
 
+
+    private fun onClick(model: SupplicationModel) {
+        mutableList.clear()
+        mutableList.addAll(model.list)
+        val bundle = Bundle()
+        bundle.putString("supplicationName", model.name)
+        findNavController().navigate(ID.supplicationToInner, bundle)
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _supplicationBinding = null
+    }
+
+
+    companion object {
+        val mutableList: MutableList<SupplicationInnerModel> = mutableListOf()
     }
 
 

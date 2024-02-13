@@ -5,12 +5,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.surahyaseen.repo.MainRepo
+import com.example.surahyaseen.repo.SupplicationRepo
 import kotlinx.coroutines.launch
 
 @Suppress("UNCHECKED_CAST")
 class MainVM<T> : ViewModel() {
     private val mainRepo by lazy {
         MainRepo()
+    }
+
+    private val supplicationRepo by lazy {
+        SupplicationRepo()
     }
 
     private val mutableLiveData = MutableLiveData<List<T>>()
@@ -59,6 +64,13 @@ class MainVM<T> : ViewModel() {
     fun getQul() {
         viewModelScope.launch {
             val list = mainRepo.getQul() as List<T>
+            mutableLiveData.postValue(list)
+        }
+    }
+
+    fun getSupplication() {
+        viewModelScope.launch {
+            val list = supplicationRepo.getSupplications() as List<T>
             mutableLiveData.postValue(list)
         }
     }
