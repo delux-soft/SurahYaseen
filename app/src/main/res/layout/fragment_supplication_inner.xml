@@ -76,8 +76,9 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            android:paddingHorizontal="20dp"
-            android:visibility="gone"
+            android:paddingHorizontal="40dp"
+            android:visibility="invisible"
+            android:splitMotionEvents="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bodyHead" />
 

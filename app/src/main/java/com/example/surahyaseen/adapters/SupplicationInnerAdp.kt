@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.surahyaseen.databinding.SupplicationInnerItem2Binding
 import com.example.surahyaseen.databinding.SupplicationInnerItemBinding
 import com.example.surahyaseen.model.SupplicationInnerModel
 
 class SupplicationInnerAdp(
     private val itemType: Int,
-    private val list: List<SupplicationInnerModel>
+    private val list: List<SupplicationInnerModel>, private val callback: (Int) -> Unit = {}
 ) :
     RecyclerView.Adapter<ViewHolder>() {
 
@@ -28,7 +29,7 @@ class SupplicationInnerAdp(
 
             1 -> {
                 val binding =
-                    SupplicationInnerItemBinding.inflate(
+                    SupplicationInnerItem2Binding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
@@ -51,8 +52,11 @@ class SupplicationInnerAdp(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val model = list[position]
         if (holder is SupplicationVH1) {
+            holder.bind(model, position)
         } else if (holder is SupplicationVH2) {
+            holder.bind(model)
         }
     }
 
@@ -63,17 +67,24 @@ class SupplicationInnerAdp(
 
 
     inner class SupplicationVH1(private val binding: SupplicationInnerItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(model: SupplicationInnerModel) {
+        ViewHolder(binding.root) {
+        fun bind(model: SupplicationInnerModel, position: Int) {
             binding.name.text = model.name
+            binding.card.setOnClickListener {
+                callback(position)
+            }
+
         }
 
     }
 
-    inner class SupplicationVH2(private val binding: SupplicationInnerItemBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    inner class SupplicationVH2(private val binding: SupplicationInnerItem2Binding) :
+        ViewHolder(binding.root) {
         fun bind(model: SupplicationInnerModel) {
-            binding.name.text = model.name
+            binding.supplicationName.text = model.name
+            binding.supplicationArabic.text = model.duaArabic
+            binding.supplicationEng.text = model.duaEng
+            binding.supplicationUrdu.text = model.duaUrdu
         }
 
     }

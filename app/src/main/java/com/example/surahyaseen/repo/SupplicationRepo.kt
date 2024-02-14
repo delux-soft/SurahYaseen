@@ -6,7 +6,7 @@ import com.example.surahyaseen.model.SupplicationModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class SupplicationRepo {
+object SupplicationRepo {
 
 
     suspend fun getSupplications(): List<SupplicationModel> {

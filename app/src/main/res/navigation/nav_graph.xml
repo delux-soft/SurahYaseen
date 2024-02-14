@@ -25,7 +25,6 @@
                 app:argType="string" />
         </action>
 
-
         <action
             android:id="@+id/homeToNames"
             app:destination="@id/names"
@@ -54,6 +53,7 @@
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
             app:popExitAnim="@anim/nav_default_exit_anim" />
+
         <action
             android:id="@+id/homeToSupp"
             app:destination="@id/supplication"
@@ -61,12 +61,29 @@
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
             app:popExitAnim="@anim/nav_default_exit_anim" />
+
+        <action
+            android:id="@+id/homeToTasbeeh"
+            app:destination="@id/tasbeeh"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/homeToCalender"
+            app:destination="@id/calender"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+
     </fragment>
 
     <fragment
         android:id="@+id/home"
         android:name="com.example.surahyaseen.fragments.HomeFragment"
         tools:layout="@layout/fragment_home" />
+
     <fragment
         android:id="@+id/setting"
         android:name="com.example.surahyaseen.fragments.SettingFragment"
@@ -88,10 +105,12 @@
         android:id="@+id/qalma"
         android:name="com.example.surahyaseen.fragments.QalmaFragment"
         tools:layout="@layout/fragment_qalma" />
+
     <fragment
         android:id="@+id/qul"
         android:name="com.example.surahyaseen.fragments.QulFragment"
         tools:layout="@layout/fragment_qul" />
+
     <fragment
         android:id="@+id/supplication"
         android:name="com.example.surahyaseen.fragments.SupplicationFragment"
@@ -110,5 +129,14 @@
         android:id="@+id/supplicationInner"
         android:name="com.example.surahyaseen.fragments.SupplicationInner"
         tools:layout="@layout/fragment_supplication_inner" />
+
+    <fragment
+        android:id="@+id/tasbeeh"
+        android:name="com.example.surahyaseen.fragments.TasbeehFragment"
+        tools:layout="@layout/fragment_tasbeeh" />
+    <fragment
+        android:id="@+id/calender"
+        android:name="com.example.surahyaseen.fragments.CalenderFragment"
+        tools:layout="@layout/fragment_calender" />
 
 </navigation>

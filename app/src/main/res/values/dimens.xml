@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="_50sdp">50.00dp</dimen>
+    <dimen name="_90sdp">90.00dp</dimen>
+    <dimen name="_30sdp">30.00dp</dimen>
+    <dimen name="_20sdp">20.00dp</dimen>
+
+    <dimen name="root_layout_padding">8dp</dimen>
+
+    <dimen name="cardinal_direction_text_ratio">0.20f</dimen>
+    <dimen name="degree_text_ratio">0.04f</dimen>
+
+    <dimen name="status_degrees_text_size_factor">0.14f</dimen>
+    <dimen name="status_cardinal_direction_text_size_factor">0.055f</dimen>
+    <dimen name="cardinal_direction_text_size_factor">0.08f</dimen>
+    <dimen name="degree_text_size_factor">0.03f</dimen>
+</resources>

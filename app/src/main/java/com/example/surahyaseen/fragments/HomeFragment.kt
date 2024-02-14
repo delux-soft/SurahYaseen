@@ -67,9 +67,18 @@ class HomeFragment : Fragment() {
             fourQul.setOnClickListener {
                 listener?.onHomeClick(HomeMode.QUL)
             }
+
             supplications.setOnClickListener {
                 listener?.onHomeClick(HomeMode.SUPPLICATION)
             }
+
+            tasbeeh.setOnClickListener {
+                listener?.onHomeClick(HomeMode.COUNTER)
+            }
+            calender.setOnClickListener {
+                listener?.onHomeClick(HomeMode.CALENDER)
+            }
+
         }
     }
 

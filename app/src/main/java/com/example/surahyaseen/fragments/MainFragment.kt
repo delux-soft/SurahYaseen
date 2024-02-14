@@ -130,11 +130,11 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
             }
 
             HomeMode.CALENDER -> {
-
+                findNavController().navigate(ID.homeToCalender)
             }
 
             HomeMode.COUNTER -> {
-
+                findNavController().navigate(ID.homeToTasbeeh)
             }
 
             HomeMode.KALMA -> {

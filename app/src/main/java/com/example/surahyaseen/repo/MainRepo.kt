@@ -8,7 +8,7 @@ import com.example.surahyaseen.model.SurahModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class MainRepo {
+object MainRepo {
 
 
     suspend fun getSurahYaseen(): List<SurahModel> {
