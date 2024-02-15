@@ -76,6 +76,13 @@
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
             app:popExitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/homeToQibla"
+            app:destination="@id/qibla"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
 
     </fragment>
 
@@ -138,5 +145,9 @@
         android:id="@+id/calender"
         android:name="com.example.surahyaseen.fragments.CalenderFragment"
         tools:layout="@layout/fragment_calender" />
+    <fragment
+        android:id="@+id/qibla"
+        android:name="com.example.surahyaseen.fragments.CompassFragment"
+        tools:layout="@layout/fragment_compass" />
 
 </navigation>

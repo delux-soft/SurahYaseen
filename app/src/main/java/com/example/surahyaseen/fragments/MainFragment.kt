@@ -143,7 +143,7 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
 
 
             HomeMode.QIBLA -> {
-
+                findNavController().navigate(ID.homeToQibla)
             }
 
             HomeMode.QUL -> {

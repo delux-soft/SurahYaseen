@@ -17,18 +17,18 @@ import com.example.surahyaseen.utils.MathUtils
 
 private const val HAPTIC_FEEDBACK_INTERVAL = 2.0f
 
-class CompassView (context: Context, attributes: AttributeSet) : ConstraintLayout(context, attributes) {
+class CompassView(context: Context, attributes: AttributeSet) :
+    ConstraintLayout(context, attributes) {
 
     @IdRes
     private val center = R.id.compass_rose_image
 
     private var lastHapticFeedbackPoint: Azimuth? = null
 
-    private lateinit var binding: CompassViewBinding
+    private var binding: CompassViewBinding
 
     init {
-        val layoutInflater = LayoutInflater.from(context)
-//        binding = CompassViewBinding.inflate(layoutInflater,this,false)
+        binding = CompassViewBinding.inflate(LayoutInflater.from(context), this)
     }
 
     override fun onSizeChanged(width: Int, height: Int, oldWidth: Int, oldHeight: Int) {
@@ -41,33 +41,33 @@ class CompassView (context: Context, attributes: AttributeSet) : ConstraintLayou
     }
 
     private fun updateStatusDegreesTextSize(textSize: Float) {
-//        binding.statusDegreesText.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.statusDegreesText.setTextSize(COMPLEX_UNIT_PX, textSize)
     }
 
     private fun updateStatusCardinalDirectionTextSize(textSize: Float) {
-//        binding.statusCardinalDirectionText.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.statusCardinalDirectionText.setTextSize(COMPLEX_UNIT_PX, textSize)
     }
 
     private fun updateCardinalDirectionTextSize(textSize: Float) {
-/*        binding.cardinalDirectionNorthText.setTextSize(COMPLEX_UNIT_PX, textSize)
-        binding.cardinalDirectionEastText.setTextSize(COMPLEX_UNIT_PX, textSize)
-        binding.cardinalDirectionSouthText.setTextSize(COMPLEX_UNIT_PX, textSize)
-        binding.cardinalDirectionWestText.setTextSize(COMPLEX_UNIT_PX, textSize)*/
+                binding.cardinalDirectionNorthText.setTextSize(COMPLEX_UNIT_PX, textSize)
+                binding.cardinalDirectionEastText.setTextSize(COMPLEX_UNIT_PX, textSize)
+                binding.cardinalDirectionSouthText.setTextSize(COMPLEX_UNIT_PX, textSize)
+                binding.cardinalDirectionWestText.setTextSize(COMPLEX_UNIT_PX, textSize)
     }
 
     private fun updateDegreeTextSize(textSize: Float) {
-//        binding.degree0Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree30Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree60Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree90Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree120Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree150Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree180Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree210Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree240Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree270Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree300Text.setTextSize(COMPLEX_UNIT_PX, textSize)
-//        binding.degree330Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree0Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree30Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree60Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree90Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree120Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree150Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree180Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree210Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree240Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree270Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree300Text.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.degree330Text.setTextSize(COMPLEX_UNIT_PX, textSize)
     }
 
     fun setAzimuth(value: Float) {
@@ -85,16 +85,16 @@ class CompassView (context: Context, attributes: AttributeSet) : ConstraintLayou
     }
 
     private fun updateStatusDegreesText(azimuth: Azimuth) {
-//        binding.statusDegreesText.text = context.getString(R.string.degrees, azimuth.roundedDegrees)
+        binding.statusDegreesText.text = context.getString(R.string.degrees, azimuth.roundedDegrees)
     }
 
     private fun updateStatusDirectionText(azimuth: Azimuth) {
-//        binding.statusCardinalDirectionText.text = context.getString(azimuth.cardinalDirection.labelResourceId)
+        binding.statusCardinalDirectionText.text = context.getString(azimuth.cardinalDirection.labelResourceId)
     }
 
     private fun rotateCompassRoseImage(rotation: Float) {
-//        binding.compassRoseImage.rotation = rotation
-//        binding.compassHeadingIndicator.rotation = rotation
+        binding.compassRoseImage.rotation = rotation
+        binding.compassHeadingIndicator.rotation = rotation
     }
 
     private fun rotateCompassRoseTexts(rotation: Float) {
@@ -111,9 +111,24 @@ class CompassView (context: Context, attributes: AttributeSet) : ConstraintLayou
         val radius = calculateTextRadius(getFloat(R.dimen.cardinal_direction_text_ratio))
 
         constraintSet.constrainCircle(R.id.cardinal_direction_north_text, center, radius, rotation)
-        constraintSet.constrainCircle(R.id.cardinal_direction_east_text, center, radius, rotation + 90)
-        constraintSet.constrainCircle(R.id.cardinal_direction_south_text, center, radius, rotation + 180)
-        constraintSet.constrainCircle(R.id.cardinal_direction_west_text, center, radius, rotation + 270)
+        constraintSet.constrainCircle(
+            R.id.cardinal_direction_east_text,
+            center,
+            radius,
+            rotation + 90
+        )
+        constraintSet.constrainCircle(
+            R.id.cardinal_direction_south_text,
+            center,
+            radius,
+            rotation + 180
+        )
+        constraintSet.constrainCircle(
+            R.id.cardinal_direction_west_text,
+            center,
+            radius,
+            rotation + 270
+        )
     }
 
     private fun rotateDegreeTexts(constraintSet: ConstraintSet, rotation: Float) {
@@ -160,7 +175,8 @@ class CompassView (context: Context, attributes: AttributeSet) : ConstraintLayou
     }
 
     private fun updateLastHapticFeedbackPoint(azimuth: Azimuth) {
-        val closestIntervalPoint = MathUtils.getClosestNumberFromInterval(azimuth.degrees, HAPTIC_FEEDBACK_INTERVAL)
+        val closestIntervalPoint =
+            MathUtils.getClosestNumberFromInterval(azimuth.degrees, HAPTIC_FEEDBACK_INTERVAL)
         lastHapticFeedbackPoint = Azimuth(closestIntervalPoint)
     }
 }

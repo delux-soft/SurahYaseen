@@ -78,6 +78,9 @@ class HomeFragment : Fragment() {
             calender.setOnClickListener {
                 listener?.onHomeClick(HomeMode.CALENDER)
             }
+            qibla.setOnClickListener {
+                listener?.onHomeClick(HomeMode.QIBLA)
+            }
 
         }
     }

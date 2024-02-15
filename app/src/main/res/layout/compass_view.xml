@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <merge>
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/compass_rose_image"
             android:layout_width="match_parent"
@@ -187,4 +185,3 @@
 
     </merge>
 
-</layout>
