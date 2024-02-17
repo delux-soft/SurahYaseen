@@ -25,6 +25,7 @@ class SupplicationAdp(
 
     override fun onBindViewHolder(holder: SupplicationVH, position: Int) {
         val model = list[position]
+
         holder.bind(model)
     }
 
