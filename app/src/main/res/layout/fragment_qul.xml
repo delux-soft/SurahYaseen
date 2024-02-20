@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/qulHeader"
-        layout="@layout/header_layout" />
+        layout="@layout/normal_header_layout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body"
@@ -16,7 +16,7 @@
         android:layout_height="0dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        app:layout_constraintBottom_toTopOf="@id/bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/qulHeader">
 
 
@@ -57,7 +57,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <include
-        android:id="@+id/bottom"
-        layout="@layout/bottom_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.surahyaseen.adapters.TasbeehAdp
 import com.example.surahyaseen.databinding.FragmentTasbeehBinding
 import com.example.surahyaseen.model.TasbeehModel
@@ -48,6 +49,10 @@ class TasbeehFragment : Fragment() {
         tasbeehBinding.resetFab.setOnClickListener {
             val index = tasbeehBinding.tasbeehVP.currentItem
             adp?.reset(index)
+        }
+
+        tasbeehBinding.tasbeehHeader.back.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

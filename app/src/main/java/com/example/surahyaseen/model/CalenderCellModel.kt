@@ -1,11 +1,11 @@
-package com.example.surahyaseen.calenderUtils
+package com.example.surahyaseen.model
 
-data class CalendarCell(
+data class CalenderCellModel(
     val hijriDay: Int,
     val georgianDay: Int,
     val hijriMonth: Int,
     val georgianMonth: Int,
-    val week: Int,
+    val week:Int,
     val georgianYear: Int,
-    var isSelect: Boolean = false
+    var isSelect: Boolean = false,
 )

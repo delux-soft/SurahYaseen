@@ -18,7 +18,7 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="37dp"
+        android:layout_marginHorizontal="27dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/bottom_shape"
         app:compatShadowEnabled="true"

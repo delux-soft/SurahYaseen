@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.surahyaseen.R
+import com.example.surahyaseen.activities.ID
 import com.example.surahyaseen.adapters.SurahAdp
 import com.example.surahyaseen.databinding.FragmentSurahBinding
 import com.example.surahyaseen.model.SurahModel
@@ -60,6 +62,13 @@ class SurahFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindObserver()
+
+        surahBinding.surahHeader.settings.setOnClickListener {
+            findNavController().navigate(ID.surahToSetting)
+        }
+        surahBinding.surahHeader.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun bindObserver() {

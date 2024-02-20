@@ -6,25 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.surahyaseen.R
-import com.example.surahyaseen.calenderUtils.CalendarCell
-import com.example.surahyaseen.databinding.CalenderItemBinding
-import com.example.surahyaseen.model.HGDate
+import com.example.surahyaseen.model.CalenderCellModel
 import com.example.surahyaseen.model.NumbersLocal
+import com.example.surahyaseen.R
+import com.example.surahyaseen.databinding.ItemCalenderCellBinding
+import com.example.surahyaseen.model.CalenderHGDate
 
 
 class CalenderAdp(
     private val context: Context,
-    private val list: List<CalendarCell>,
+    private val list: List<CalenderCellModel>,
     private val callback: (Int) -> Unit
 ) :
     RecyclerView.Adapter<CalenderAdp.CalenderVH>() {
 
-    private var index = -1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalenderVH {
+
         val binding =
-            CalenderItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemCalenderCellBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CalenderVH(binding)
     }
 
@@ -38,17 +38,15 @@ class CalenderAdp(
     }
 
 
-    inner class CalenderVH(private val binding: CalenderItemBinding) :
+    inner class CalenderVH(private val binding: ItemCalenderCellBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(calendarCell: CalendarCell, position: Int) {
-
-
-            if (calendarCell.isSelect) {
-                binding.viewBg.setBackgroundResource(R.drawable.bg_today)
+        fun bind(model: CalenderCellModel, position: Int) {
+            if (model.isSelect) {
+                binding.viewSelect.setBackgroundResource(R.drawable.bg_select)
             } else {
-                binding.viewBg.setBackgroundResource(0)
+                binding.viewSelect.setBackgroundColor(0)
             }
-            if (calendarCell.hijriDay == -1) {
+            if (model.hijriDay == -1) {
                 binding.tvDate.visibility = View.GONE
                 binding.tvDateMuslim.visibility = View.GONE
             } else {
@@ -56,8 +54,8 @@ class CalenderAdp(
                 binding.tvDateMuslim.visibility = View.VISIBLE
             }
 
-            val hGDate = HGDate()
-            if (calendarCell.georgianMonth == hGDate.month && calendarCell.georgianDay == hGDate.day && calendarCell.georgianYear == hGDate.year) {
+            val hGDate = CalenderHGDate()
+            if (model.georgianMonth == hGDate.getMonth() && model.georgianDay == hGDate.getDay() && model.georgianYear == hGDate.getYear()) {
                 binding.tvDate.setTextColor(Color.parseColor("#017F01"))
                 binding.tvDateMuslim.setTextColor(Color.parseColor("#017F01"))
                 binding.viewBg.setBackgroundResource(R.drawable.bg_today)
@@ -68,23 +66,15 @@ class CalenderAdp(
             }
             binding.tvDate.text = NumbersLocal.convertNumberType(
                 context,
-                "${calendarCell.georgianDay} "
+                "${model.georgianDay} "
             )
             binding.tvDateMuslim.text = NumbersLocal.convertNumberType(
                 context,
-                "${calendarCell.hijriDay}"
+                "${model.hijriDay} "
             )
-            binding.viewSelect.setOnClickListener {
 
 
-                if (index != -1) {
-                    list[index].isSelect = false
-                    notifyItemChanged(index)
-                }
-                calendarCell.isSelect = true
-                notifyItemChanged(position)
-                index = position
-
+            binding.root.setOnClickListener {
                 callback(position)
             }
         }

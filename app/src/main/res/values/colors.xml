@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="baseColor">#67B5B6</color>
     <color name="bgColor">#3365B4B5</color>
+    <color name="ad_color_yellow">#EDDA2F</color>
+    <color name="black_transparent">#73000000</color>
 </resources>

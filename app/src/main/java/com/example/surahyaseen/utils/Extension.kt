@@ -13,8 +13,7 @@ object Extension {
         clipChildren = false    // No clipping the left and right items
         clipToPadding = false   // Show the viewpager in full width without clipping the padding
         offscreenPageLimit = 3  // Render the left and right items
-//        (getChildAt(0) as RecyclerView).overScrollMode =
-//            RecyclerView.OVER_SCROLL_NEVER // Remove the scroll effect
+
 
         val compositePageTransformer = CompositePageTransformer()
         compositePageTransformer.addTransformer(MarginPageTransformer((20 * Resources.getSystem().displayMetrics.density).toInt()))

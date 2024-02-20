@@ -25,6 +25,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.surahyaseen.databinding.FragmentCompassBinding
 import com.example.surahyaseen.enums.DisplayRotation
 import com.example.surahyaseen.model.Azimuth
@@ -77,6 +78,10 @@ class CompassFragment : Fragment() {
 
         bindObserver()
         setupSystemService()
+
+        compassBinding.compassHeader.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
 

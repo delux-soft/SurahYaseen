@@ -4,236 +4,248 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
         android:id="@+id/calenderHeader"
+        layout="@layout/normal_header_layout" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/body"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:paddingHorizontal="20dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calenderHeader">
+
 
         <ImageView
+            android:id="@+id/bodyHead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/imageIcon"
-            android:padding="5dp"
-            android:src="@drawable/previous_ic"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/header_ic"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        app:contentPadding="10dp"
-        app:layout_constraintTop_toBottomOf="@id/calenderHeader">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:fontFamily="@font/arial"
+            android:text="@string/calender"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/bodyHead"
+            app:layout_constraintEnd_toEndOf="@id/bodyHead"
+            app:layout_constraintStart_toStartOf="@id/bodyHead"
+            app:layout_constraintTop_toTopOf="@id/bodyHead" />
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            app:contentPadding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/bodyHead">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_month_muslim"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:text="Muharram"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:focusableInTouchMode="true"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_month"
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:text="September"
-                        android:textColor="#49454f" />
-
-                    <ImageView
-                        android:id="@+id/bt_left"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:padding="18dp"
-                        android:src="@drawable/previous_ic" />
-
-                    <ImageView
-                        android:id="@+id/bt_right"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="5dp"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:padding="18dp"
-                        android:rotation="180"
-                        android:src="@drawable/previous_ic" />
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:id="@+id/miladi_cal_days"
+                    <TextView
+                        android:id="@+id/tv_month_muslim"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal"
-                        android:weightSum="7">
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1.5dp"
+                        android:background="@color/bgColor" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_month"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="15dp"
                             android:layout_weight="1"
-                            android:focusable="true"
-                            android:focusableInTouchMode="true"
-                            android:freezesText="true"
-                            android:gravity="center"
-                            android:lines="1"
-                            android:text="S"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:scrollHorizontally="true"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="#1c1b1f" />
+                            android:gravity="center_vertical"
+                            android:textColor="#49454f" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
+                        <ImageView
+                            android:id="@+id/bt_left"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:clickable="true"
                             android:focusable="true"
-                            android:text="S"
-                            android:focusableInTouchMode="true"
-                            android:freezesText="true"
-                            android:gravity="center"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:maxLines="1"
-                            android:scrollHorizontally="true"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="#1c1b1f" />
+                            android:padding="18dp"
+                            android:src="@drawable/previous_ic" />
 
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
+                        <ImageView
+                            android:id="@+id/bt_right"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="5dp"
+                            android:clickable="true"
                             android:focusable="true"
-                            android:text="M"
-                            android:focusableInTouchMode="true"
-                            android:freezesText="true"
-                            android:gravity="center"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:maxLines="1"
-                            android:scrollHorizontally="true"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="#1c1b1f" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:focusable="true"
-                            android:text="T"
-                            android:focusableInTouchMode="true"
-                            android:freezesText="true"
-                            android:gravity="center"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:maxLines="1"
-                            android:scrollHorizontally="true"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="#1c1b1f" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:text="W"
-                            android:focusable="true"
-                            android:focusableInTouchMode="true"
-                            android:freezesText="true"
-                            android:gravity="center"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:maxLines="1"
-                            android:scrollHorizontally="true"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="#1c1b1f" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:text="T"
-                            android:ellipsize="marquee"
-                            android:focusable="true"
-                            android:focusableInTouchMode="true"
-                            android:freezesText="true"
-                            android:gravity="center"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:scrollHorizontally="true"
-                            android:singleLine="true"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="#1c1b1f" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:ellipsize="marquee"
-                            android:focusable="true"
-                            android:text="F"
-                            android:focusableInTouchMode="true"
-                            android:freezesText="true"
-                            android:gravity="center"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:scrollHorizontally="true"
-                            android:singleLine="true"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textColor="#1c1b1f" />
+                            android:padding="18dp"
+                            android:rotation="180"
+                            android:src="@drawable/previous_ic" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/calenderRecycler"
+                        <LinearLayout
+                            android:id="@+id/miladi_cal_days"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="30dp"
+                            android:orientation="horizontal"
+                            android:weightSum="7">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:gravity="center"
+                                android:lines="1"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
+                                android:text="@string/day1m"
+                                android:textColor="#1c1b1f" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true"
+                                android:text="@string/day2m"
+                                android:textColor="#1c1b1f" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true"
+                                android:text="@string/day3m"
+                                android:textColor="#1c1b1f" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true"
+                                android:text="@string/day4m"
+                                android:textColor="#1c1b1f" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLines="1"
+                                android:scrollHorizontally="true"
+                                android:text="@string/day5m"
+                                android:textColor="#1c1b1f" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="@string/day6m"
+                                android:textColor="#1c1b1f" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:gravity="center"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="@string/day7m"
+                                android:textColor="#1c1b1f" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/calenderRecycler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
 
-        </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

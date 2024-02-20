@@ -60,58 +60,52 @@
 
 
 
-    <string name="day1">Saturday</string>
+
+    <string name="day1">Sunday</string>
+    <string name="day2">Monday</string>
+    <string name="day3">Tuesday</string>
+    <string name="day4">Wednesday</string>
+    <string name="day5">Thursday</string>
+    <string name="day6">Friday</string>
+    <string name="day7">Saturday</string>
+
+
     <string name="day1m">S</string>
-    <string name="day2">Sunday</string>
     <string name="day2m">M</string>
-    <string name="day3">Monday</string>
     <string name="day3m">T</string>
-    <string name="day4">Tuesday</string>
     <string name="day4m">W</string>
-    <string name="day5">Wednesday</string>
     <string name="day5m">T</string>
-    <string name="day6">Thursday</string>
     <string name="day6m">F</string>
-    <string name="day7">Friday</string>
     <string name="day7m">S</string>
 
     <string name="month1">Muharram</string>
-    <string name="month10">Shawwal</string>
-    <string name="month10e">Shawwal</string>
-    <string name="month10g">October</string>
-    <string name="month11">Thul Qa`dah</string>
-    <string name="month11e">Thul Qa`dah</string>
-    <string name="month11g">November</string>
-    <string name="month12">Thul Hijjah</string>
-    <string name="month12e">Thul Hijjah</string>
-    <string name="month12g">December</string>
-    <string name="month1e">Muharram</string>
-    <string name="month1g">January</string>
     <string name="month2">Safar</string>
-    <string name="month2e">Safar</string>
-    <string name="month2g">February</string>
-    <string name="month3">Raby` al-awal</string>
-    <string name="month3e">Rabi\'I</string>
-    <string name="month3g">March</string>
-    <string name="month4">Raby` al-THaany</string>
-    <string name="month4e">Rabi\'II</string>
-    <string name="month4g">April</string>
-    <string name="month5">Jumaada al-awal</string>
-    <string name="month5e">Jumaada I</string>
-    <string name="month5g">May</string>
-    <string name="month6">Jumaada al-THaany</string>
-    <string name="month6e">Jumaada II</string>
-    <string name="month6g">June</string>
+    <string name="month3">Rabi-ul-Awwal</string>
+    <string name="month4">Rabi-us Sani</string>
+    <string name="month5">Jamadi-ul-Awwal</string>
+    <string name="month6">Jamadi-us-Sani</string>
     <string name="month7">Rajab</string>
-    <string name="month7e">Rajab</string>
+    <string name="month8">Shaban</string>
+    <string name="month9">Ramadan</string>
+    <string name="month10">Shawal</string>
+    <string name="month11">Zil-Qadah</string>
+    <string name="month12">Zul-Hijah</string>
+
+
+    <string name="month1g">January</string>
+    <string name="month2g">February</string>
+    <string name="month3g">March</string>
+    <string name="month4g">April</string>
+    <string name="month5g">May</string>
+    <string name="month6g">June</string>
     <string name="month7g">July</string>
-    <string name="month8">Sha`baan</string>
-    <string name="month8e">Sha`baan</string>
     <string name="month8g">August</string>
-    <string name="month9">Ramadhan</string>
-    <string name="month9e">Ramadhan</string>
     <string name="month9g">September</string>
+    <string name="month10g">October</string>
+    <string name="month11g">November</string>
+    <string name="month12g">December</string>
 
     <string name="gregorian_date_format">%1$s %2$s %3$s</string>
     <string name="islamic_date_format">%1$s %2$s %3$s</string>
+    <string name="calender">Calender</string>
 </resources>

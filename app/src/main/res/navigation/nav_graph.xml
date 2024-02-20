@@ -101,12 +101,29 @@
         android:name="com.example.surahyaseen.fragments.SurahFragment"
         tools:layout="@layout/fragment_surah">
 
+        <action
+            android:id="@+id/surahToSetting"
+            app:destination="@id/setting"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+
     </fragment>
 
     <fragment
         android:id="@+id/names"
         android:name="com.example.surahyaseen.fragments.NamesFragment"
-        tools:layout="@layout/fragment_names" />
+        tools:layout="@layout/fragment_names" >
+
+        <action
+            android:id="@+id/namesToSetting"
+            app:destination="@id/setting"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 
     <fragment
         android:id="@+id/qalma"

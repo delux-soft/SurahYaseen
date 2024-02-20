@@ -9,6 +9,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.example.surahyaseen.activities.ID
 import com.example.surahyaseen.databinding.FragmentMainBinding
+import com.example.surahyaseen.dialogFragment.ExitDialog
 import com.example.surahyaseen.enums.MainMode.SettingMode
 import com.example.surahyaseen.enums.MainMode.HomeMode
 
@@ -174,7 +175,8 @@ class MainFragment : Fragment(), SettingListener, HomeListener {
                     homeFragment?.let { home -> setCurrentFragment(home) }
 
                 } else {
-                    requireActivity().finish()
+                    val exitDialog = ExitDialog()
+                    exitDialog.show(childFragmentManager)
                 }
             }
 

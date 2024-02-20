@@ -10,6 +10,7 @@ import com.example.surahyaseen.databinding.ActivityMainBinding
 
 typealias ID = R.id
 typealias raw = R.raw
+typealias string = R.string
 typealias drawable = R.drawable
 
 
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
-
     }
+
+
 }

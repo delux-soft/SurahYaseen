@@ -43,6 +43,10 @@ class SupplicationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindObserver()
+
+        supplicationBinding.suppMainHeader.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun bindObserver() {

@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="1st Kalma"
                 android:textColor="@color/baseColor"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +36,7 @@
                 android:id="@+id/qalmaArabic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:text="لَآ اِلٰهَ اِلَّا اﷲُ مُحَمَّدٌ رَّسُوْلُ اﷲِ"
                 android:textColor="@color/black"

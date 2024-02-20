@@ -1,19 +1,15 @@
 package com.example.surahyaseen.fragments
-
-import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateInterpolator
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.surahyaseen.R
 import com.example.surahyaseen.adapters.SupplicationInnerAdp
 import com.example.surahyaseen.databinding.FragmentSupplicationInnerBinding
 import com.example.surahyaseen.utils.Animation
@@ -63,6 +59,9 @@ class SupplicationInner : Fragment() {
             viewLifecycleOwner,
             onBackPressedCallback
         )
+        supplicationInnerBinding.suppInnerHeader.back.setOnClickListener {
+            onBackPress()
+        }
         setAdp()
         setVP()
     }
@@ -100,16 +99,20 @@ class SupplicationInner : Fragment() {
 
     private val onBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            if (!supplicationInnerBinding.supplicationInnerRecycler.isVisible) {
-                Animation.crossFade(
-                    requireContext(),
-                    supplicationInnerBinding.supplicationInnerRecycler,
-                    supplicationInnerBinding.supplicationInnerVP
-                )
-            } else {
-                findNavController().popBackStack()
-            }
+            onBackPress()
 
+        }
+    }
+
+    private fun onBackPress() {
+        if (!supplicationInnerBinding.supplicationInnerRecycler.isVisible) {
+            Animation.crossFade(
+                requireContext(),
+                supplicationInnerBinding.supplicationInnerRecycler,
+                supplicationInnerBinding.supplicationInnerVP
+            )
+        } else {
+            findNavController().popBackStack()
         }
     }
 

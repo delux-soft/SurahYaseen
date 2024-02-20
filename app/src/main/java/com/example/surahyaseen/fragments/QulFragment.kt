@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.surahyaseen.R
 import com.example.surahyaseen.adapters.QulAdp
 import com.example.surahyaseen.databinding.FragmentQulBinding
@@ -40,6 +41,9 @@ class QulFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bindObserver()
+        qulBinding.qulHeader.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun bindObserver() {

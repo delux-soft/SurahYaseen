@@ -2,7 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="2dp"
     android:orientation="vertical">
 
     <FrameLayout
@@ -26,8 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="1"
-                android:textColor="#017f01"
+                android:textColor="#673AB7"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:visibility="visible" />
@@ -38,8 +36,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:paddingBottom="2dp"
-                android:text="2"
-                android:textColor="#017f01"
+                android:textColor="#673AB7"
                 android:textSize="9sp"
                 android:visibility="visible" />
         </LinearLayout>
@@ -48,7 +45,7 @@
             android:id="@+id/view_event"
             android:layout_width="5dp"
             android:layout_height="5dp"
-            android:layout_gravity="bottom|right|center_vertical|center_horizontal|center|end"
+            android:layout_gravity="bottom|end|center_vertical|center_horizontal|center|end"
             android:layout_margin="7dp"
             android:background="@drawable/pb_name_thumb" />
     </FrameLayout>
