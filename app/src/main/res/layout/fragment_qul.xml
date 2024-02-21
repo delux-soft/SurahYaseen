@@ -16,7 +16,7 @@
         android:layout_height="0dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/qulBanner"
         app:layout_constraintTop_toBottomOf="@id/qulHeader">
 
 
@@ -24,7 +24,6 @@
             android:id="@+id/surahBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:contentDescription="@string/imageIcon"
             android:src="@drawable/header_ic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,4 +56,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
+
+    <include
+        android:id="@+id/qulBanner"
+        layout="@layout/banner_ad" />
 </androidx.constraintlayout.widget.ConstraintLayout>

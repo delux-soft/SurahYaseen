@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>show_interstitial_ad</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>show_native_ad</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>show_inline_banner_ad</key>
+        <value>false</value>
+    </entry>
+
+    <entry>
+        <key>show_low_app_open</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>show_med_app_open</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>inter_ad_time</key>
+        <value>2</value>
+    </entry>
+
+</defaultsMap>

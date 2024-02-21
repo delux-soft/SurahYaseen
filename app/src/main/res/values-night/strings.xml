@@ -108,4 +108,6 @@
     <string name="gregorian_date_format">%1$s %2$s %3$s</string>
     <string name="islamic_date_format">%1$s %2$s %3$s</string>
     <string name="calender">Calender</string>
+    <string name="ad">Ad</string>
+    <string name="install">Install</string>
 </resources>

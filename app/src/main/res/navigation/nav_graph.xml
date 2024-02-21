@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/main"
-        android:name="com.example.surahyaseen.fragments.MainFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.MainFragment"
         tools:layout="@layout/fragment_main">
 
         <action
@@ -88,17 +88,17 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.example.surahyaseen.fragments.HomeFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/setting"
-        android:name="com.example.surahyaseen.fragments.SettingFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.SettingFragment"
         tools:layout="@layout/fragment_setting" />
 
     <fragment
         android:id="@+id/surah"
-        android:name="com.example.surahyaseen.fragments.SurahFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.SurahFragment"
         tools:layout="@layout/fragment_surah">
 
         <action
@@ -113,7 +113,7 @@
 
     <fragment
         android:id="@+id/names"
-        android:name="com.example.surahyaseen.fragments.NamesFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.NamesFragment"
         tools:layout="@layout/fragment_names" >
 
         <action
@@ -127,17 +127,17 @@
 
     <fragment
         android:id="@+id/qalma"
-        android:name="com.example.surahyaseen.fragments.QalmaFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.QalmaFragment"
         tools:layout="@layout/fragment_qalma" />
 
     <fragment
         android:id="@+id/qul"
-        android:name="com.example.surahyaseen.fragments.QulFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.QulFragment"
         tools:layout="@layout/fragment_qul" />
 
     <fragment
         android:id="@+id/supplication"
-        android:name="com.example.surahyaseen.fragments.SupplicationFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.SupplicationFragment"
         tools:layout="@layout/fragment_supplication">
 
         <action
@@ -151,20 +151,20 @@
 
     <fragment
         android:id="@+id/supplicationInner"
-        android:name="com.example.surahyaseen.fragments.SupplicationInner"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.SupplicationInner"
         tools:layout="@layout/fragment_supplication_inner" />
 
     <fragment
         android:id="@+id/tasbeeh"
-        android:name="com.example.surahyaseen.fragments.TasbeehFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.TasbeehFragment"
         tools:layout="@layout/fragment_tasbeeh" />
     <fragment
         android:id="@+id/calender"
-        android:name="com.example.surahyaseen.fragments.CalenderFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.CalenderFragment"
         tools:layout="@layout/fragment_calender" />
     <fragment
         android:id="@+id/qibla"
-        android:name="com.example.surahyaseen.fragments.CompassFragment"
+        android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.CompassFragment"
         tools:layout="@layout/fragment_compass" />
 
 </navigation>

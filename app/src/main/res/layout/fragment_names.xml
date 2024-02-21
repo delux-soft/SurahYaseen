@@ -16,7 +16,7 @@
         android:layout_height="0dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomBody"
         app:layout_constraintTop_toBottomOf="@id/namesHeader">
 
 
@@ -24,7 +24,6 @@
             android:id="@+id/surahBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:contentDescription="@string/imageIcon"
             android:src="@drawable/header_ic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,9 +57,11 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomBody"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_marginVertical="15dp"
+        app:layout_constraintBottom_toTopOf="@id/namesBanner">
 
         <ImageView
             android:id="@+id/prev"
@@ -73,7 +74,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.example.surahyaseen.customView.CarouselRecyclerView
+        <com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.customView.CarouselRecyclerView
             android:id="@+id/numberRecycler"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -99,4 +100,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <include
+        android:id="@+id/namesBanner"
+        layout="@layout/banner_ad" />
 </androidx.constraintlayout.widget.ConstraintLayout>

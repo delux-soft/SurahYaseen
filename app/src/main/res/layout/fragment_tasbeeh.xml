@@ -16,7 +16,7 @@
         android:layout_height="0dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tasbeehBanner"
         app:layout_constraintTop_toBottomOf="@id/tasbeehHeader">
 
         <androidx.viewpager2.widget.ViewPager2
@@ -83,4 +83,9 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
+
+    <include
+        android:id="@+id/tasbeehBanner"
+        layout="@layout/banner_ad" />
 </androidx.constraintlayout.widget.ConstraintLayout>

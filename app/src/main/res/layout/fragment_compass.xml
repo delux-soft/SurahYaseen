@@ -22,7 +22,6 @@
             android:id="@+id/bodyHead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:contentDescription="@string/imageIcon"
             android:src="@drawable/header_ic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,9 +46,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/bodyNext"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/qiblaBanner"
         app:layout_constraintTop_toBottomOf="@id/body">
 
         <com.google.android.material.card.MaterialCardView
@@ -66,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <com.example.surahyaseen.customView.CompassView
+                <com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.customView.CompassView
                     android:id="@+id/compass"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
@@ -143,4 +143,8 @@
     </androidx.core.widget.NestedScrollView>
 
 
+
+    <include
+        android:id="@+id/qiblaBanner"
+        layout="@layout/banner_ad" />
 </androidx.constraintlayout.widget.ConstraintLayout>

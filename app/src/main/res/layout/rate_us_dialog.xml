@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="15dp"
+        app:cardUseCompatPadding="true"
+        app:strokeWidth="0dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/baseColor"
+                android:gravity="center"
+                android:text="Rate Us"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Do you like our app?"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:lineHeight="25dp"
+                android:text="Give us quick rating so we know \n if you like it."
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="15dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/star_action" />
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/star_action" />
+
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/star_action" />
+
+                <ImageView
+                    android:id="@+id/img4"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/star_action" />
+
+                <ImageView
+                    android:id="@+id/img5"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/star_action" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:weightSum="2">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    android:text="No, thanks"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/yes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_weight="1"
+                    app:backgroundTint="@color/baseColor"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:cornerRadius="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

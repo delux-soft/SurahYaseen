@@ -14,14 +14,13 @@
         android:id="@+id/body"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/qalmaBanner"
         app:layout_constraintTop_toBottomOf="@id/qalmaHeader">
 
         <ImageView
             android:id="@+id/bodyHead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:contentDescription="@string/imageIcon"
             android:src="@drawable/header_ic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +56,11 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+    <include
+        android:id="@+id/qalmaBanner"
+        layout="@layout/banner_ad" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

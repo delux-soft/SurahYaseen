@@ -1,8 +1,18 @@
 <resources>
     <string name="app_name">Surah Yaseen</string>
+
+    <!--Original-->
+    <string name="app_id">ca-app-pub-1627749521334309~4444210274</string>
+
+    <string name="low_app_open_id">ca-app-pub-1627749521334309/5475302319</string>
+    <string name="med_app_open_id">ca-app-pub-1627749521334309/7800367309</string>
+    <string name="banner_id">ca-app-pub-1627749521334309/5920943472</string>
+    <string name="inline_banner_id">ca-app-pub-1627749521334309/5668231829</string>
+    <string name="interstitial_id">ca-app-pub-1627749521334309/7397676672</string>
+    <string name="native_ad">ca-app-pub-1627749521334309/2849138977</string>
+
+
     <string name="imageIcon">imageIcon</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="setting">Setting</string>
     <string name="feedback">Feedback:</string>
@@ -100,5 +110,7 @@
     <string name="gregorian_date_format">%1$s %2$s %3$s</string>
     <string name="islamic_date_format">%1$s %2$s %3$s</string>
     <string name="calender">Calender</string>
+    <string name="ad">Ad</string>
+    <string name="install">Install</string>
 
 </resources>

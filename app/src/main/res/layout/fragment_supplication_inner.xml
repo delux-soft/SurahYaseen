@@ -17,14 +17,13 @@
         android:layout_height="0dp"
         android:clipChildren="false"
         android:clipToPadding="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/suppInnerBanner"
         app:layout_constraintTop_toBottomOf="@id/suppInnerHeader">
 
         <ImageView
             android:id="@+id/bodyHead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:contentDescription="@string/imageIcon"
             android:src="@drawable/header_ic"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +45,7 @@
             app:layout_constraintTop_toTopOf="@id/bodyHead" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/supplicationInnerRecycler"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -62,11 +61,15 @@
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:paddingHorizontal="40dp"
-            android:visibility="invisible"
             android:splitMotionEvents="true"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bodyHead" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+    <include
+        android:id="@+id/suppInnerBanner"
+        layout="@layout/banner_ad" />
 </androidx.constraintlayout.widget.ConstraintLayout>
