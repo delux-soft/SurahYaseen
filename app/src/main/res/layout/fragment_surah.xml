@@ -53,7 +53,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
     <include
         android:id="@+id/surahBanner"
         layout="@layout/banner_ad" />

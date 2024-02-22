@@ -31,20 +31,21 @@ object MainRepo {
     }
 
 
+
     suspend fun getSurahRehman(): List<SurahModel> {
         return withContext(Dispatchers.IO) {
             listOf(
-                SurahModel("file:///android_asset/rehman/srk.png", raw.syks),
-                SurahModel("file:///android_asset/rehman/srj.png", raw.syjs),
-                SurahModel("file:///android_asset/rehman/sri.png", raw.syis),
-                SurahModel("file:///android_asset/rehman/srh.png", raw.syhs),
-                SurahModel("file:///android_asset/rehman/srg.png", raw.sygs),
-                SurahModel("file:///android_asset/rehman/srf.png", raw.syfs),
-                SurahModel("file:///android_asset/rehman/sre.png", raw.syes),
-                SurahModel("file:///android_asset/rehman/srd.png", raw.syds),
-                SurahModel("file:///android_asset/rehman/src.png", raw.sycs),
-                SurahModel("file:///android_asset/rehman/srb.png", raw.sybs),
-                SurahModel("file:///android_asset/rehman/sra.png", raw.syas)
+                SurahModel("file:///android_asset/rehman/srk.png", raw.srks),
+                SurahModel("file:///android_asset/rehman/srj.png", raw.srjs),
+                SurahModel("file:///android_asset/rehman/sri.png", raw.sris),
+                SurahModel("file:///android_asset/rehman/srh.png", raw.srhs),
+                SurahModel("file:///android_asset/rehman/srg.png", raw.srgs),
+                SurahModel("file:///android_asset/rehman/srf.png", raw.srfs),
+                SurahModel("file:///android_asset/rehman/sre.png", raw.sres),
+                SurahModel("file:///android_asset/rehman/srd.png", raw.srds),
+                SurahModel("file:///android_asset/rehman/src.png", raw.srcs),
+                SurahModel("file:///android_asset/rehman/srb.png", raw.srbs),
+                SurahModel("file:///android_asset/rehman/sra.png", raw.sras)
             )
         }
     }

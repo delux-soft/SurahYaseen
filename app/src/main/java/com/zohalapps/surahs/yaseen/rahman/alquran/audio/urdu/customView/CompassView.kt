@@ -50,10 +50,10 @@ class CompassView(context: Context, attributes: AttributeSet) :
     }
 
     private fun updateCardinalDirectionTextSize(textSize: Float) {
-                binding.cardinalDirectionNorthText.setTextSize(COMPLEX_UNIT_PX, textSize)
-                binding.cardinalDirectionEastText.setTextSize(COMPLEX_UNIT_PX, textSize)
-                binding.cardinalDirectionSouthText.setTextSize(COMPLEX_UNIT_PX, textSize)
-                binding.cardinalDirectionWestText.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.cardinalDirectionNorthText.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.cardinalDirectionEastText.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.cardinalDirectionSouthText.setTextSize(COMPLEX_UNIT_PX, textSize)
+        binding.cardinalDirectionWestText.setTextSize(COMPLEX_UNIT_PX, textSize)
     }
 
     private fun updateDegreeTextSize(textSize: Float) {
@@ -90,7 +90,8 @@ class CompassView(context: Context, attributes: AttributeSet) :
     }
 
     private fun updateStatusDirectionText(azimuth: Azimuth) {
-        binding.statusCardinalDirectionText.text = context.getString(azimuth.cardinalDirection.labelResourceId)
+        binding.statusCardinalDirectionText.text =
+            context.getString(azimuth.cardinalDirection.labelResourceId)
     }
 
     private fun rotateCompassRoseImage(rotation: Float) {

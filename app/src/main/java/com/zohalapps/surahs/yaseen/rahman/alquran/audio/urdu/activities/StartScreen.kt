@@ -106,7 +106,6 @@ class StartScreen : Activity() {
 
                 })
 
-
             }
         }.start()
 

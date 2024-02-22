@@ -37,7 +37,7 @@ class NamesFragment : Fragment() {
     private var adp: BottomNumberAdp? = null
 
     private val banner by lazy {
-        BannerAd(requireContext(),lifecycle)
+        BannerAd(requireContext(), lifecycle)
     }
 
     override fun onCreateView(
@@ -82,10 +82,11 @@ class NamesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bindObserver()
         bindListener()
-        
+        nameBinding.namesHeader.speaker.visibility = View.GONE
+        nameBinding.namesHeader.playPause.visibility = View.GONE
         nameBinding.root.viewTreeObserver.addOnWindowFocusChangeListener {
             Log.d(TAG, "onViewCreated: $it")
-            if (it){
+            if (it) {
                 showAd()
             }
         }

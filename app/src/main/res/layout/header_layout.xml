@@ -25,6 +25,17 @@
         android:src="@drawable/setting_ic"
         android:contentDescription="@string/imageIcon"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/playPause"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/playPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/play_click"
+        android:contentDescription="@string/imageIcon"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/speaker"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +43,7 @@
         android:id="@+id/speaker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/speaker_ic"
+        android:src="@drawable/sound_click"
         android:contentDescription="@string/imageIcon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

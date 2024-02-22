@@ -12,6 +12,8 @@
     <string name="native_ad">ca-app-pub-1627749521334309/2849138977</string>
 
 
+    <string name="channelId" translatable="false">com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fcm</string>
+
     <string name="imageIcon">imageIcon</string>
     <string name="home">Home</string>
     <string name="setting">Setting</string>

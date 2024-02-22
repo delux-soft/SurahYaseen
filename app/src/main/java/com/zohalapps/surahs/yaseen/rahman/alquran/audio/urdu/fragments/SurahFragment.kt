@@ -1,12 +1,13 @@
 package com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.doOnPreDraw
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.ads.AdView
@@ -14,9 +15,9 @@ import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.activities.ID
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.activities.drawable
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.adapters.SurahAdp
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.ads.BannerAd
+import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.databinding.FragmentSurahBinding
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.model.SurahModel
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.viewModel.MainVM
-import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.databinding.FragmentSurahBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -32,9 +33,15 @@ class SurahFragment : Fragment() {
 
     private val coroutineScope = CoroutineScope(Dispatchers.Main)
 
+    private var currentPosition = 0
+
     private val banner by lazy {
         BannerAd(requireContext(), lifecycle)
     }
+
+    private var mediaPlayer: MediaPlayer? = null
+
+    private val list: MutableList<SurahModel> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +57,6 @@ class SurahFragment : Fragment() {
 
         coroutineScope.launch {
             val argument = arguments?.getString("surahName", "")
-            Log.d(TAG, "onCreateView: $argument")
             argument?.let {
                 if (it.isNotEmpty()) {
                     when (it) {
@@ -101,23 +107,107 @@ class SurahFragment : Fragment() {
         surahBinding.surahHeader.back.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        surahBinding.surahHeader.playPause.setOnClickListener {
+            surahBinding.surahHeader.playPause.isActivated =
+                !surahBinding.surahHeader.playPause.isActivated
+
+            mediaPlayer?.let {
+                if (it.isPlaying) {
+                    it.pause()
+                } else {
+                    if (surahBinding.surahHeader.speaker.isActivated) {
+                        surahBinding.surahHeader.speaker.isActivated = false
+                    }
+                    it.start()
+                }
+            }
+        }
+
+        surahBinding.surahHeader.speaker.setOnClickListener {
+            surahBinding.surahHeader.speaker.isActivated =
+                !surahBinding.surahHeader.speaker.isActivated
+
+            mediaPlayer?.let {
+                if (it.isPlaying) {
+                    it.pause()
+                } else {
+                    if (!surahBinding.surahHeader.speaker.isActivated && surahBinding.surahHeader.playPause.isActivated) {
+                        it.start()
+                    }
+
+                }
+            }
+        }
     }
 
     private fun bindObserver() {
         mainVM.liveData.observe(viewLifecycleOwner) {
+            currentPosition = it.lastIndex
+            list.addAll(it)
             setAdp(it)
+
         }
     }
 
     private fun setAdp(list: List<SurahModel>) {
         val adp = SurahAdp(this, list)
         surahBinding.surahVP.adapter = adp
-        surahBinding.surahVP.setCurrentItem(list.size - 1, true)
+        surahBinding.surahVP.setCurrentItem(list.lastIndex, true)
+        surahBinding.surahVP.setPageTransformer { _, _ ->
+            val index = surahBinding.surahVP.currentItem
+            if (currentPosition != index) {
+                currentPosition = index
+                changeEveryThing(currentPosition)
+            }
+        }
+        mediaPlayer = MediaPlayer.create(requireContext(), list[list.lastIndex].sound)
+    }
+
+
+    private fun changeEveryThing(position: Int) {
+        Log.d(TAG, "changeEveryThing: $position")
+        releaseMediaPlayer()
+        surahBinding.surahVP.setCurrentItem(position, true)
+        mediaPlayer = MediaPlayer.create(requireContext(), list[position].sound)
+        mediaPlayer?.start()
+        surahBinding.surahHeader.playPause.isActivated = true
+        mediaPlayer?.setOnCompletionListener {
+            var soundPosition = position - 1
+            surahBinding.surahVP.setCurrentItem(soundPosition, true)
+            if (soundPosition <= -1) {
+                soundPosition = 10
+                surahBinding.surahVP.setCurrentItem(soundPosition, true)
+
+                mediaPlayer?.pause()
+                surahBinding.surahHeader.playPause.isActivated = true
+            }
+        }
+    }
+
+    private fun releaseMediaPlayer() {
+        mediaPlayer?.let {
+            if (it.isPlaying) {
+                it.stop()
+            }
+            it.reset()
+            mediaPlayer = null
+        }
+    }
+
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer?.let {
+            it.pause()
+            surahBinding.surahHeader.playPause.isActivated = false
+        }
     }
 
 
     override fun onDestroyView() {
         super.onDestroyView()
+        mediaPlayer?.release()
         _surahBinding = null
     }
 }

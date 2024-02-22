@@ -108,8 +108,8 @@ class SupplicationFragment : Fragment() {
         val bundle = Bundle()
         bundle.putString("supplicationName", model.name)
         ++myApp.count
-        Log.d("Count!", "onClick Main: ${myApp.count}")
-        if (myApp.count % 2 == 0) {
+        Log.d("Count!", "onClick Main: ${myApp.count % 2 != 0} ${myApp.count != 1}")
+        if (myApp.count != 1 && myApp.count % 2 != 0) {
             if (MyInterstitialAd.mInterstitialAd != null) {
                 MyInterstitialAd.mInterstitialAd?.show(requireActivity())
             }

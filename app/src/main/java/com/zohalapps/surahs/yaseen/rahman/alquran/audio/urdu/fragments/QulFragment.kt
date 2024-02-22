@@ -40,9 +40,7 @@ class QulFragment : Fragment() {
         }
 
         qulBinding.root.doOnPreDraw{
-
                 showAd()
-
         }
         return qulBinding.root
     }

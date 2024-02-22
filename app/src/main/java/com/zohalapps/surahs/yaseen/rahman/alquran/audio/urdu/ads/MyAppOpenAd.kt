@@ -8,13 +8,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
-import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.activities.string
-import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.interfaces.AdListener
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.appopen.AppOpenAd
+import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.R
+import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.interfaces.AdListener
 
 
 private const val TAG = "MyAppOpenAdXX"
@@ -23,12 +23,8 @@ class MyAppOpenAd(
     private val application: Application
 ) : LifecycleEventObserver, Application.ActivityLifecycleCallbacks {
 
-    private var adIdLow: String
-
-    //    private var adIdMed: String
+    private var adId: String
     private lateinit var activity: Activity
-
-
     private var isLoading = false
     private var isShowingAd = false
     var wantToShow = false
@@ -38,56 +34,49 @@ class MyAppOpenAd(
     init {
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
         application.registerActivityLifecycleCallbacks(this)
-        adIdLow = application.getString(string.low_app_open_id)
-//        adIdMed = application.getString(R.string.med_app_open_id)
-
+        adId = application.getString(R.string.low_app_open_id)
     }
 
 
     private fun fetchAd() {
-
-        Log.d(TAG, "fetchAd: ${!isLoading} $appOpenAd")
         if (!isLoading && appOpenAd == null) {
-
             val adRequest = AdRequest.Builder().build()
             isLoading = true
             val callback = object :
                 AppOpenAd.AppOpenAdLoadCallback() {
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
-                    Log.d(TAG, "fetchAd: onAdFailedToLoad ${p0.message}")
+                    Log.d(TAG, "onAdFailedToLoad: " + p0.message)
                     isLoading = false
-
                 }
 
                 override fun onAdLoaded(p0: AppOpenAd) {
                     super.onAdLoaded(p0)
-                    Log.d(TAG, "Successfully Loaded")
                     isLoading = false
                     appOpenAd = p0
-
+                    Log.d(TAG, "onAdLoaded: ")
                 }
             }
+            Log.d(TAG, "fetchAd: loading start")
             AppOpenAd.load(
                 application,
-                adIdLow,
+                adId,
                 adRequest,
                 callback
             )
 
 
         }
-
     }
 
 
     fun showAdRightNow(listener: AdListener) {
         if (appOpenAd != null && !isShowingAd) {
-
+            Log.d(TAG, "showAd: ready to show")
             val callback = object : FullScreenContentCallback() {
                 override fun onAdDismissedFullScreenContent() {
                     super.onAdDismissedFullScreenContent()
-
+                    Log.d(TAG, "onAdDismissedFullScreenContent: ")
                     listener.onAdDismissed()
                     appOpenAd = null
                     isShowingAd = false
@@ -96,29 +85,35 @@ class MyAppOpenAd(
 
                 override fun onAdFailedToShowFullScreenContent(p0: AdError) {
                     super.onAdFailedToShowFullScreenContent(p0)
-
+                    Log.d(TAG, "onAdFailedToShowFullScreenContent: ")
                     isShowingAd = false
                     listener.onAdShowingFailed()
                 }
 
+                override fun onAdShowedFullScreenContent() {
+                    super.onAdShowedFullScreenContent()
+                    Log.d(TAG, "onAdShowedFullScreenContent: ")
+                }
             }
 
             isShowingAd = true
             appOpenAd?.fullScreenContentCallback = callback
             appOpenAd?.show(activity)
         } else {
-            Log.d(TAG, "showAdRightNow:  null")
             listener.onAdNull()
+            Log.d(TAG, "showAd: loading ad")
             fetchAd()
         }
     }
 
     private fun showAd() {
+        Log.d(TAG, "showAd: $appOpenAd $wantToShow ${isShowingAd}")
         if (appOpenAd != null && wantToShow && !isShowingAd) {
-            Log.d(TAG, "showAd: show")
+            Log.d(TAG, "showAd: ready to show")
             val callback = object : FullScreenContentCallback() {
                 override fun onAdDismissedFullScreenContent() {
                     super.onAdDismissedFullScreenContent()
+                    Log.d(TAG, "onAdDismissedFullScreenContent: ")
                     appOpenAd = null
                     isShowingAd = false
                     fetchAd()
@@ -126,17 +121,21 @@ class MyAppOpenAd(
 
                 override fun onAdFailedToShowFullScreenContent(p0: AdError) {
                     super.onAdFailedToShowFullScreenContent(p0)
-
+                    Log.d(TAG, "onAdFailedToShowFullScreenContent: ")
                     isShowingAd = false
                 }
 
+                override fun onAdShowedFullScreenContent() {
+                    super.onAdShowedFullScreenContent()
+                    Log.d(TAG, "onAdShowedFullScreenContent: ")
+                }
             }
 
             isShowingAd = true
             appOpenAd?.fullScreenContentCallback = callback
             appOpenAd?.show(activity)
         } else {
-            Log.d(TAG, "showAd: else")
+            Log.d(TAG, "showAd: loading ad")
             fetchAd()
         }
     }
@@ -145,7 +144,7 @@ class MyAppOpenAd(
     override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
 
         if (event == Lifecycle.Event.ON_START) {
-            Log.d(TAG, "onStateChanged: ")
+            Log.d(TAG, "onStateChanged: onstart")
             showAd()
         }
     }
@@ -179,5 +178,4 @@ class MyAppOpenAd(
     override fun onActivityDestroyed(p0: Activity) {
         // Activity Destroyed
     }
-
 }
