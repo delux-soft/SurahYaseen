@@ -39,8 +39,8 @@ class QulFragment : Fragment() {
             mainVM.getQul()
         }
 
-        qulBinding.root.doOnPreDraw{
-                showAd()
+        qulBinding.root.doOnPreDraw {
+            showAd()
         }
         return qulBinding.root
     }
@@ -85,6 +85,7 @@ class QulFragment : Fragment() {
         val adp = QulAdp(it)
         qulBinding.qulVP.addCarouselEffect()
         qulBinding.qulVP.adapter = adp
+        qulBinding.qulVP.setCurrentItem(it.lastIndex, true)
     }
 
 

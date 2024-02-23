@@ -1,6 +1,7 @@
 package com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.gms.ads.AdView
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.adapters.TasbeehAdp
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.ads.BannerAd
@@ -19,6 +21,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+private const val TAG = "TasbeehFragmentXX"
+
 class TasbeehFragment : Fragment() {
     private var _tasbeehBinding: FragmentTasbeehBinding? = null
 
@@ -26,11 +30,16 @@ class TasbeehFragment : Fragment() {
 
     private val mainVM by viewModels<MainVM<TasbeehModel>>()
 
+    private var index = 0
+
+    private var listSize = 0
+
     private var adp: TasbeehAdp? = null
 
     private val banner by lazy {
         BannerAd(requireContext(), lifecycle)
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,9 +52,7 @@ class TasbeehFragment : Fragment() {
         }
 
         tasbeehBinding.root.doOnPreDraw {
-
             showAd()
-
         }
         return tasbeehBinding.root
     }
@@ -85,6 +92,29 @@ class TasbeehFragment : Fragment() {
             adp?.reset(index)
         }
 
+        tasbeehBinding.next.setOnClickListener {
+            ++index
+            Log.d(TAG, "bindListener: $index $listSize")
+            if (index >= listSize) {
+                --index
+            } else {
+                tasbeehBinding.tasbeehVP.setCurrentItem(index, true)
+            }
+
+
+        }
+
+        tasbeehBinding.prev.setOnClickListener {
+            --index
+            Log.d(TAG, "bindListener: $index $listSize")
+            if (index <= 0) {
+                ++index
+            } else {
+                tasbeehBinding.tasbeehVP.setCurrentItem(index, true)
+            }
+
+        }
+
         tasbeehBinding.tasbeehHeader.back.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -101,6 +131,21 @@ class TasbeehFragment : Fragment() {
         adp = TasbeehAdp(it)
         tasbeehBinding.tasbeehVP.addCarouselEffect()
         tasbeehBinding.tasbeehVP.adapter = adp
+        listSize = it.size
+        tasbeehBinding.tasbeehVP.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                val value = positionOffset.compareTo(0.0)
+                if (value == 0) {
+                    index = tasbeehBinding.tasbeehVP.currentItem
+                }
+            }
+        })
 
     }
 

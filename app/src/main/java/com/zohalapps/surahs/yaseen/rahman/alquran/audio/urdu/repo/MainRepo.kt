@@ -31,7 +31,6 @@ object MainRepo {
     }
 
 
-
     suspend fun getSurahRehman(): List<SurahModel> {
         return withContext(Dispatchers.IO) {
             listOf(
@@ -1553,25 +1552,12 @@ object MainRepo {
     suspend fun getQalma(): List<QalmaModel> {
         return withContext(Dispatchers.IO) {
             listOf(
+
+
                 QalmaModel(
-                    "1st Kalma",
-                    "لَآ اِلٰهَ اِلَّا اﷲُ مُحَمَّدٌ رَّسُوْلُ اﷲِ",
-                    "There is none worthy of worship except ALLAH, (and) Muhammad (P.B.U.H) is the Messenger of ALLAH."
-                ),
-                QalmaModel(
-                    "2nd Kalma",
-                    "اَشْهَدُ اَنْ لاَّ اِلٰهَ اِلاَّ اﷲُ وَحْدَهُ لَا شَرِيْکَ لَهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُِ",
-                    "I bear witness that there is none worthy of worship except ALLAH, the One alone, without partner, and I bear witness that Muhammad (P.B.U.H) is His Servant and Messenger."
-                ),
-                QalmaModel(
-                    "3rd Kalma",
-                    "سُبْحَانَ اﷲِ وَالْحَمْدُِ ﷲِ وَلَآ اِلٰهَ اِلَّا اﷲُ وَاﷲُ اَکْبَرُ ط وَلَا حَوْلَ وَلَا قُوَّةَ اِلَّا بِاﷲِ الْعَلِيِ الْعَظِيْمِ",
-                    "Glory be to ALLAH and all praise be to ALLAH and there is no worthy of worship except ALLAH, and ALLAH is the Greatest. And there is no might or power except with ALLAH, the Exalted, the Great One."
-                ),
-                QalmaModel(
-                    "4th Kalma",
-                    "لَآ اِلٰهَ اِلاَّ اﷲُ وَحْدَهُ لَاشَرِيْکَ لَهُ لَهُ الْمُلْکُ وَلَهُ الْحَمْدُ يُحْی وَيُمِيْتُ وَهُوَ حَيٌّ لَّا يَمُوْتُ اَبَدًا اَبَدًا ط ذُوالْجَلَالِ وَالْاِکْرَامِ ط بِيَدِهِ الْخَيْرُ ط وَهُوَعَلٰی کُلِّ شَيْئٍ قَدِيْرِ",
-                    "There is none worthy of worship except ALLAH. He is alone and has no partner. To Him belongs the Kingdom and for Him is all praise. He gives life and causes death. And He is alive. He will not die, never, ever. Possessor of Majesty and Reverence. In His hand is all good and He has power over everything."
+                    "6th Kalma",
+                    "اَللّٰهُمَّ اِنِّيْ اَعُوْذُ بِکَ مِنْ اَنْ اُشْرِکَ بِکَ شَيْئًا وَّاَنَا اَعْلَمُُ بِهِ وَاَسْتَغْفِرُکَ لِمَا لَآ اَعْلَمُ بِهِ تُبْتُ عَنْهُ وَتَبَرَّاْتُ مِنَ الْکُفْرِ وَالشِّرْکِ وَالْکِذْبِ وَالْغِيْبَةِ وَالْبِدْعَةِ وَالنَّمِيْمَةِ وَالْفَوَاحِشِ وَالْبُهْتَانِ وَالْمَعَاصِيْ کُلِّهَا وَاَسْلَمْتُ وَاَقُوْلُ لَآ اِلٰهَ اِلَّا اﷲُ مُحَمَّدٌ رَّسُوْلُ اﷲِِ",
+                    "O ALLAH! I seek refuge in You from that I should not join any partner with You, and I have knowledge of it. I seek Your forgiveness from that which I do not know. I repent from it (ignorance), and I reject disbelief and joining partners with You and of falsehood and slandering and innovation in religion and tell-tales and evil deeds and the blame and the disobedience, all of them. I submit to Your will, and I believe and declare: There is none worthy of worship except ALLAH and Muhammad (P.B.U.H) is His Messenger."
                 ),
                 QalmaModel(
                     "5th Kalma",
@@ -1579,10 +1565,25 @@ object MainRepo {
                     "I seek forgiveness from ALLAH, my Lord, from every sin I committed knowingly or unknowingly, secretly or openly, and I turn towards Him from the sin that I know and from the sin that I do not know, Certainly You (O ALLAH!), You (are) the knower of the hidden things and the Concealer (of) the mistakes and the Forgiver (of) the sins. And (there is) no power and no strength except from ALLAH, the Most High, the Most Great."
                 ),
                 QalmaModel(
-                    "6th Kalma",
-                    "اَللّٰهُمَّ اِنِّيْ اَعُوْذُ بِکَ مِنْ اَنْ اُشْرِکَ بِکَ شَيْئًا وَّاَنَا اَعْلَمُُ بِهِ وَاَسْتَغْفِرُکَ لِمَا لَآ اَعْلَمُ بِهِ تُبْتُ عَنْهُ وَتَبَرَّاْتُ مِنَ الْکُفْرِ وَالشِّرْکِ وَالْکِذْبِ وَالْغِيْبَةِ وَالْبِدْعَةِ وَالنَّمِيْمَةِ وَالْفَوَاحِشِ وَالْبُهْتَانِ وَالْمَعَاصِيْ کُلِّهَا وَاَسْلَمْتُ وَاَقُوْلُ لَآ اِلٰهَ اِلَّا اﷲُ مُحَمَّدٌ رَّسُوْلُ اﷲِِ",
-                    "O ALLAH! I seek refuge in You from that I should not join any partner with You, and I have knowledge of it. I seek Your forgiveness from that which I do not know. I repent from it (ignorance), and I reject disbelief and joining partners with You and of falsehood and slandering and innovation in religion and tell-tales and evil deeds and the blame and the disobedience, all of them. I submit to Your will, and I believe and declare: There is none worthy of worship except ALLAH and Muhammad (P.B.U.H) is His Messenger."
-                )
+                    "4th Kalma",
+                    "لَآ اِلٰهَ اِلاَّ اﷲُ وَحْدَهُ لَاشَرِيْکَ لَهُ لَهُ الْمُلْکُ وَلَهُ الْحَمْدُ يُحْی وَيُمِيْتُ وَهُوَ حَيٌّ لَّا يَمُوْتُ اَبَدًا اَبَدًا ط ذُوالْجَلَالِ وَالْاِکْرَامِ ط بِيَدِهِ الْخَيْرُ ط وَهُوَعَلٰی کُلِّ شَيْئٍ قَدِيْرِ",
+                    "There is none worthy of worship except ALLAH. He is alone and has no partner. To Him belongs the Kingdom and for Him is all praise. He gives life and causes death. And He is alive. He will not die, never, ever. Possessor of Majesty and Reverence. In His hand is all good and He has power over everything."
+                ),
+                QalmaModel(
+                    "3rd Kalma",
+                    "سُبْحَانَ اﷲِ وَالْحَمْدُِ ﷲِ وَلَآ اِلٰهَ اِلَّا اﷲُ وَاﷲُ اَکْبَرُ ط وَلَا حَوْلَ وَلَا قُوَّةَ اِلَّا بِاﷲِ الْعَلِيِ الْعَظِيْمِ",
+                    "Glory be to ALLAH and all praise be to ALLAH and there is no worthy of worship except ALLAH, and ALLAH is the Greatest. And there is no might or power except with ALLAH, the Exalted, the Great One."
+                ),
+                QalmaModel(
+                    "2nd Kalma",
+                    "اَشْهَدُ اَنْ لاَّ اِلٰهَ اِلاَّ اﷲُ وَحْدَهُ لَا شَرِيْکَ لَهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُِ",
+                    "I bear witness that there is none worthy of worship except ALLAH, the One alone, without partner, and I bear witness that Muhammad (P.B.U.H) is His Servant and Messenger."
+                ),
+                QalmaModel(
+                    "1st Kalma",
+                    "لَآ اِلٰهَ اِلَّا اﷲُ مُحَمَّدٌ رَّسُوْلُ اﷲِ",
+                    "There is none worthy of worship except ALLAH, (and) Muhammad (P.B.U.H) is the Messenger of ALLAH."
+                ),
             )
         }
     }

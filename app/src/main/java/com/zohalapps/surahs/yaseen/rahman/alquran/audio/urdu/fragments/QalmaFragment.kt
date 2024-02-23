@@ -19,7 +19,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
 class QalmaFragment : Fragment() {
     private var _qalmaBinding: FragmentQalmaBinding? = null
     private val qalmaBinding get() = _qalmaBinding!!
@@ -87,6 +86,7 @@ class QalmaFragment : Fragment() {
         qalmaBinding.qalmaVP.addCarouselEffect()
         qalmaBinding.qalmaVP.adapter = adapter
         adapter.submitList(it)
+        qalmaBinding.qalmaVP.setCurrentItem(it.lastIndex, true)
     }
 
 

@@ -1,7 +1,6 @@
 package com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.core.view.doOnPreDraw
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,14 +19,10 @@ import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.app.MyApplication
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.utils.Animation
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.utils.Extension.addCarouselEffect
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.databinding.FragmentSupplicationInnerBinding
-import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.model.SupplicationModel
-import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.viewModel.MainVM
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
-private const val TAG = "SupplicationInnerXX"
 
 class SupplicationInner : Fragment() {
     private var _supplicationInnerBinding: FragmentSupplicationInnerBinding? = null
@@ -123,8 +117,7 @@ class SupplicationInner : Fragment() {
 
 
     private fun onClick(position: Int) {
-        ++myApp.count
-        Log.d("Count!", "onClick Inner: ${myApp.count}")
+        myApp.count++
         if (myApp.count % 2 == 0) {
             if (MyInterstitialAd.mInterstitialAd != null) {
                 MyInterstitialAd.mInterstitialAd?.show(requireActivity())

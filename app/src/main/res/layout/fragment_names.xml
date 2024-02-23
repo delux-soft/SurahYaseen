@@ -46,7 +46,7 @@
             app:layout_constraintTop_toTopOf="@id/surahBack" />
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/namesRecycler"
+            android:id="@+id/namesVP"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="5dp"
@@ -59,10 +59,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomBody"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:visibility="gone"
-        android:layout_marginVertical="15dp"
-        app:layout_constraintBottom_toTopOf="@id/namesBanner">
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:id="@+id/prev"
@@ -82,7 +80,6 @@
             android:layout_gravity="top"
             android:clipToPadding="false"
             android:overScrollMode="never"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/next"
             app:layout_constraintStart_toEndOf="@id/prev"
@@ -102,7 +99,4 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <include
-        android:id="@+id/namesBanner"
-        layout="@layout/banner_ad" />
 </androidx.constraintlayout.widget.ConstraintLayout>

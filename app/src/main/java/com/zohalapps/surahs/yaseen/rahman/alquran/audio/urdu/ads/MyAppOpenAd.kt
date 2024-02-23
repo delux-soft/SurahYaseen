@@ -107,7 +107,6 @@ class MyAppOpenAd(
     }
 
     private fun showAd() {
-        Log.d(TAG, "showAd: $appOpenAd $wantToShow ${isShowingAd}")
         if (appOpenAd != null && wantToShow && !isShowingAd) {
             Log.d(TAG, "showAd: ready to show")
             val callback = object : FullScreenContentCallback() {

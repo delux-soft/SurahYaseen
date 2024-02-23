@@ -52,9 +52,9 @@ class StartScreen : Activity() {
                     startTimer()
                 }
             } else {
-                delay(1000)
+                wait = false
                 withContext(Dispatchers.Main) {
-                    changeScreen()
+                    startTimer()
                 }
             }
         }

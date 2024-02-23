@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".fragments.SurahFragment">
 
-
     <include
         android:id="@+id/surahHeader"
         layout="@layout/header_layout" />
@@ -16,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingHorizontal="20dp"
-        app:layout_constraintBottom_toTopOf="@id/surahBanner"
+        app:layout_constraintBottom_toTopOf="@id/bottomBody"
         app:layout_constraintTop_toBottomOf="@id/surahHeader">
 
 
@@ -35,6 +34,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/rehman"
+            android:contentDescription="@string/imageIcon"
             app:layout_constraintBottom_toBottomOf="@id/bodyHead"
             app:layout_constraintEnd_toEndOf="@id/bodyHead"
             app:layout_constraintStart_toStartOf="@id/bodyHead"
@@ -53,7 +53,45 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <include
-        android:id="@+id/surahBanner"
-        layout="@layout/banner_ad" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomBody"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/previous_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.customView.CarouselRecyclerView
+            android:id="@+id/numberRecycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/next"
+            app:layout_constraintStart_toEndOf="@id/prev"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="180"
+            android:src="@drawable/previous_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

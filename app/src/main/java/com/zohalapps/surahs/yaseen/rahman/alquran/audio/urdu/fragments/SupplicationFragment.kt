@@ -24,6 +24,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
 class SupplicationFragment : Fragment() {
     private var _supplicationBinding: FragmentSupplicationBinding? = null
     private val supplicationBinding get() = _supplicationBinding!!
@@ -107,9 +108,8 @@ class SupplicationFragment : Fragment() {
         mutableList.addAll(model.list)
         val bundle = Bundle()
         bundle.putString("supplicationName", model.name)
-        ++myApp.count
-        Log.d("Count!", "onClick Main: ${myApp.count % 2 != 0} ${myApp.count != 1}")
-        if (myApp.count != 1 && myApp.count % 2 != 0) {
+        myApp.count++
+        if (myApp.count % 2 == 0) {
             if (MyInterstitialAd.mInterstitialAd != null) {
                 MyInterstitialAd.mInterstitialAd?.show(requireActivity())
             }

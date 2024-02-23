@@ -6,16 +6,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.ads.AdView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.activities.ID
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.activities.drawable
+import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.adapters.BottomNumberAdp
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.adapters.SurahAdp
-import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.ads.BannerAd
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.databinding.FragmentSurahBinding
+import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.model.NumberModel
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.model.SurahModel
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.viewModel.MainVM
 import kotlinx.coroutines.CoroutineScope
@@ -35,9 +37,7 @@ class SurahFragment : Fragment() {
 
     private var currentPosition = 0
 
-    private val banner by lazy {
-        BannerAd(requireContext(), lifecycle)
-    }
+    private var adp: BottomNumberAdp? = null
 
     private var mediaPlayer: MediaPlayer? = null
 
@@ -49,10 +49,6 @@ class SurahFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _surahBinding = FragmentSurahBinding.inflate(inflater, container, false)
-
-        surahBinding.root.doOnPreDraw {
-            showAd()
-        }
 
 
         coroutineScope.launch {
@@ -85,20 +81,6 @@ class SurahFragment : Fragment() {
 
     }
 
-    private fun showAd() {
-        banner.loadBanner {
-            showBannerAd(it)
-        }
-    }
-
-    private fun showBannerAd(adView: AdView) {
-        if (adView.parent != null) {
-            (adView.parent as ViewGroup).removeView(adView)
-        }
-        surahBinding.surahBanner.ad.visibility = View.GONE
-        surahBinding.surahBanner.advertisement.visibility = View.GONE
-        surahBinding.surahBanner.bannerContainer.addView(adView)
-    }
 
     private fun bindListener() {
         surahBinding.surahHeader.settings.setOnClickListener {
@@ -146,7 +128,6 @@ class SurahFragment : Fragment() {
             currentPosition = it.lastIndex
             list.addAll(it)
             setAdp(it)
-
         }
     }
 
@@ -154,6 +135,7 @@ class SurahFragment : Fragment() {
         val adp = SurahAdp(this, list)
         surahBinding.surahVP.adapter = adp
         surahBinding.surahVP.setCurrentItem(list.lastIndex, true)
+        surahBinding.surahVP.registerOnPageChangeCallback(pageChanger)
         surahBinding.surahVP.setPageTransformer { _, _ ->
             val index = surahBinding.surahVP.currentItem
             if (currentPosition != index) {
@@ -162,6 +144,43 @@ class SurahFragment : Fragment() {
             }
         }
         mediaPlayer = MediaPlayer.create(requireContext(), list[list.lastIndex].sound)
+
+
+        setBottomRecycler(list.size)
+    }
+
+
+    private val pageChanger = object :
+        ViewPager2.OnPageChangeCallback() {
+        override fun onPageScrolled(
+            position: Int,
+            positionOffset: Float,
+            positionOffsetPixels: Int
+        ) {
+            super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+
+            val value = positionOffset.compareTo(0.0)
+            if (value == 0) {
+                val index = surahBinding.surahVP.currentItem
+                surahBinding.numberRecycler.smoothScrollToPosition(index)
+                adp?.selectPosition(index)
+            }
+        }
+    }
+
+
+    private fun setBottomRecycler(size: Int) {
+        val list = mutableListOf<NumberModel>()
+        for (i in 1..size) {
+            list.add(NumberModel(i))
+        }
+        list.reverse()
+        adp = BottomNumberAdp(list)
+        surahBinding.numberRecycler.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        surahBinding.numberRecycler.adapter = adp
+
+
     }
 
 

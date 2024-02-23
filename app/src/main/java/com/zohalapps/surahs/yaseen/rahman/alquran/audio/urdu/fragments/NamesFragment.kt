@@ -6,23 +6,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.google.android.gms.ads.AdView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.activities.ID
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.activities.string
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.adapters.BottomNumberAdp
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.adapters.NameAdp
-import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.ads.BannerAd
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.model.NamesModel
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.utils.Extension.addCarouselEffect
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.viewModel.MainVM
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.databinding.FragmentNamesBinding
+import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.model.NumberModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
 
 private const val TAG = "NamesFragmentXX"
 
@@ -36,9 +36,6 @@ class NamesFragment : Fragment() {
 
     private var adp: BottomNumberAdp? = null
 
-    private val banner by lazy {
-        BannerAd(requireContext(), lifecycle)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,9 +45,6 @@ class NamesFragment : Fragment() {
         _nameBinding = FragmentNamesBinding.inflate(inflater, container, false)
 
 
-        nameBinding.root.doOnPreDraw {
-            showAd()
-        }
 
         coroutineScope.launch {
             val argument = arguments?.getString("names", "")
@@ -84,29 +78,8 @@ class NamesFragment : Fragment() {
         bindListener()
         nameBinding.namesHeader.speaker.visibility = View.GONE
         nameBinding.namesHeader.playPause.visibility = View.GONE
-        nameBinding.root.viewTreeObserver.addOnWindowFocusChangeListener {
-            Log.d(TAG, "onViewCreated: $it")
-            if (it) {
-                showAd()
-            }
-        }
-
     }
 
-    private fun showAd() {
-        banner.loadBanner {
-            showBannerAd(it)
-        }
-    }
-
-    private fun showBannerAd(adView: AdView) {
-        if (adView.parent != null) {
-            (adView.parent as ViewGroup).removeView(adView)
-        }
-        nameBinding.namesBanner.ad.visibility = View.GONE
-        nameBinding.namesBanner.advertisement.visibility = View.GONE
-        nameBinding.namesBanner.bannerContainer.addView(adView)
-    }
 
     private fun bindListener() {
         nameBinding.namesHeader.back.setOnClickListener {
@@ -125,29 +98,47 @@ class NamesFragment : Fragment() {
 
     private fun setAdp(it: List<NamesModel>) {
         val adapter = NameAdp()
-        nameBinding.namesRecycler.addCarouselEffect()
-        nameBinding.namesRecycler.adapter = adapter
-        adapter.submitList(it)
+        val list = it.reversed()
+        nameBinding.namesVP.addCarouselEffect()
+        nameBinding.namesVP.adapter = adapter
+        adapter.submitList(list)
+        nameBinding.namesVP.setCurrentItem(it.lastIndex, true)
         setBottomRecycler(it.size)
+
+        nameBinding.namesVP.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+
+                val value = positionOffset.compareTo(0.0)
+                if (value == 0) {
+                    val index = nameBinding.namesVP.currentItem
+                    nameBinding.numberRecycler.smoothScrollToPosition(index)
+                    adp?.selectPosition(index)
+                }
+
+            }
+
+
+        })
     }
 
     private fun setBottomRecycler(size: Int) {
-        val list = mutableListOf<Int>()
+        val list = mutableListOf<NumberModel>()
         for (i in 1..size) {
-            list.add(i)
+            list.add(NumberModel(i))
         }
+        list.reverse()
+        adp = BottomNumberAdp(list)
+        nameBinding.numberRecycler.layoutManager =
+            LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+        nameBinding.numberRecycler.adapter = adp
 
-        adp = BottomNumberAdp(list) {
-            smoothScroll(it)
-        }
 
-        adp?.let { nameBinding.numberRecycler.initialize(it) }
-
-
-    }
-
-    private fun smoothScroll(it: Int) {
-        nameBinding.numberRecycler.smoothScrollToPosition(it)
     }
 
 
