@@ -116,5 +116,10 @@
     <string name="install">Install</string>
     <string name="tap">Tap</string>
     <string name="reset">reset</string>
+    <string name="exit">Do you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="qibla">Qibla Direction</string>
+    <string name="tasbeeh_counter">Tasbeeh Counter</string>
 
 </resources>
