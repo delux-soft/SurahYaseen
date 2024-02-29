@@ -15,6 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/body"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <TextView
             android:id="@+id/settingTxt"
             android:layout_width="wrap_content"
@@ -68,7 +69,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|start"
                     android:layout_marginStart="70dp"
-
                     android:text="@string/feedback"
                     android:textSize="15sp" />
 
@@ -208,12 +208,12 @@
                 android:id="@+id/nativeCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/invite"
-                app:strokeColor="@color/black"
                 android:visibility="gone"
                 app:contentPadding="-3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/invite"
                 app:shapeAppearance="@style/myShape"
+                app:strokeColor="@color/black"
                 app:strokeWidth="0.2dp">
 
                 <io.supercharge.shimmerlayout.ShimmerLayout
@@ -223,6 +223,7 @@
                     android:visibility="gone"
                     app:shimmer_animation_duration="700"
                     app:shimmer_color="#B367B5B6">
+
                     <include
                         android:id="@+id/shimmer"
                         layout="@layout/native_placeholder" />

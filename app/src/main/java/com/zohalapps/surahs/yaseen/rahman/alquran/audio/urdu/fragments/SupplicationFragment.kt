@@ -53,9 +53,7 @@ class SupplicationFragment : Fragment() {
             mainVM.getSupplication()
         }
         supplicationBinding.root.doOnPreDraw {
-
             showAd()
-
         }
 
         return supplicationBinding.root
@@ -65,7 +63,6 @@ class SupplicationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bindObserver()
         bindListener()
-
     }
 
     private fun showAd() {
@@ -121,7 +118,6 @@ class SupplicationFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         Log.d("Count!", "onDestroyView: ")
-
         _supplicationBinding = null
     }
 

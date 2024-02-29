@@ -17,13 +17,8 @@
             app:enterAnim="@animator/nav_default_enter_anim"
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
-            app:popExitAnim="@anim/nav_default_exit_anim">
+            app:popExitAnim="@anim/nav_default_exit_anim" />
 
-            <argument
-                android:name="surahName"
-                android:defaultValue="yaseen"
-                app:argType="string" />
-        </action>
 
         <action
             android:id="@+id/homeToNames"
@@ -31,12 +26,7 @@
             app:enterAnim="@animator/nav_default_enter_anim"
             app:exitAnim="@animator/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_enter_anim"
-            app:popExitAnim="@anim/nav_default_exit_anim">
-            <argument
-                android:name="names"
-                android:defaultValue=""
-                app:argType="string" />
-        </action>
+            app:popExitAnim="@anim/nav_default_exit_anim" />
 
         <action
             android:id="@+id/homeToQalma"
@@ -114,7 +104,7 @@
     <fragment
         android:id="@+id/names"
         android:name="com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments.NamesFragment"
-        tools:layout="@layout/fragment_names" >
+        tools:layout="@layout/fragment_names">
 
         <action
             android:id="@+id/namesToSetting"

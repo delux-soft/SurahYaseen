@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -21,6 +22,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+private const val TAG = "StartScreenXX"
 class StartScreen : Activity() {
     private val binding by lazy {
         ActivitySplashScreenBinding.inflate(layoutInflater)
@@ -43,6 +45,7 @@ class StartScreen : Activity() {
 
         coroutineScope.launch {
             if (NetConnectivity.isOnline(this@StartScreen)) {
+                Log.d(TAG, "onCreate: ")
                 val task = CompletableDeferred<Boolean>()
                 MyRemoteConfig.init { task.complete(true) }
                 task.await()
