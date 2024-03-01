@@ -1,11 +1,22 @@
 package com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.fragments
 
+import android.Manifest
+import android.app.AlertDialog
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.Settings
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.core.view.doOnPreDraw
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.ads.AdView
@@ -16,13 +27,14 @@ import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.dialogFragment.Exit
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.enums.MainMode.HomeMode
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.databinding.FragmentMainBinding
 
-
+private const val TAG = "MainFragmentXX"
 class MainFragment : Fragment(), HomeListener {
     private var _mainBinding: FragmentMainBinding? = null
     private val mainBinding get() = _mainBinding!!
 
     private var homeFragment: HomeFragment? = null
     private var settingFragment: SettingFragment? = null
+
 
     private val banner by lazy {
         BannerAd(requireContext(), lifecycle)
@@ -44,6 +56,11 @@ class MainFragment : Fragment(), HomeListener {
             setCurrentFragment(it)
         }
 
+        mainBinding.root.viewTreeObserver.addOnWindowFocusChangeListener {
+            if (it) {
+                askNotificationPermission()
+            }
+        }
 
 
         mainBinding.root.doOnPreDraw {
@@ -56,6 +73,63 @@ class MainFragment : Fragment(), HomeListener {
 
         return mainBinding.root
     }
+
+
+    private fun askNotificationPermission() {
+        // This is only necessary for API level >= 33 (TIRAMISU)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(
+                    requireContext(),
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) ==
+                PackageManager.PERMISSION_GRANTED
+            ) {
+                // FCM SDK (and your app) can post notifications.
+                Log.d(TAG, "askNotificationPermission: permission granted")
+            } else if (shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
+                AlertDialog.Builder(requireContext())
+                    .setMessage("Permission is required to provide full functionality of app.")
+                    .setPositiveButton("Ok") { dialog, _ ->
+                        openSettings()
+                        dialog.dismiss()
+                    }
+            } else {
+                // Directly ask for the permission
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
+        }
+
+    }
+
+    private fun openSettings() {
+        try {
+            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+            val packageName = requireContext().packageName
+            if (packageName != null) {
+                val uri = Uri.parse("package:$packageName")
+                intent.data = uri
+                startActivity(intent)
+            } else {
+
+                Toast.makeText(requireContext(), "Package name is null", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: NullPointerException) {
+            e.printStackTrace()
+        }
+    }
+
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission(),
+    ) { isGranted: Boolean ->
+        if (isGranted) {
+            // FCM SDK (and your app) can post notifications.
+            Log.d(TAG, "granted successfully: ")
+        } else {
+            // Check
+        }
+    }
+
+
 
     private fun showBannerAd() {
         banner.loadBanner {
