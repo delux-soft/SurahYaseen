@@ -1,6 +1,7 @@
 package com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -39,6 +40,9 @@ class NameAdp :
 
             binding.urduMeaning.text = model.urduMeaning
             binding.engBenefit.text = model.benefits
+            if (model.benefits.isEmpty()) {
+                binding.benefit.visibility = View.GONE
+            }
 
         }
 

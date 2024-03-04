@@ -856,693 +856,495 @@ object MainRepo {
                 NamesModel(
                     "Muhammad",
                     "مُحَمَّدُ",
-                    "The Praised One",
-                    "محمود، تعریف شدہ",
-                    "The praised and praiseworthy, the name signifies admiration and respect."
+                    "The Praised One"
                 ),
                 NamesModel(
                     "Ahmad",
                     "أَحْمَدُ",
-                    "Most Praiseworthy",
-                    "سب سے زیادہ قابل تعریف",
-                    "One who deserves the highest praise, another name for Prophet Muhammad."
+                    "Highly commendable"
                 ),
                 NamesModel(
-                    "Al-Amin",
-                    "ٱلْأَمِيْنُ",
-                    "The Trustworthy",
-                    "امانتدار",
-                    "Known for his honesty and trustworthiness, a quality of Prophet Muhammad."
+                    "Hamid",
+                    "حَامِدٌ",
+                    "Praising, One who Praise"
                 ),
                 NamesModel(
-                    "Al-Mustafa",
-                    "ٱلْمُصْطَفَىٰ",
-                    "The Chosen One",
-                    "مختار",
-                    "Chosen by Allah for Prophethood and guidance for humanity."
+                    "Maḥmood",
+                    "مَحْمودٌ",
+                    "Praised"
                 ),
                 NamesModel(
-                    "Ar-Rasool",
+                    "Qasim",
                     "ٱلرَّسُوْلُ",
-                    "The Messenger",
-                    "رسول، پیغمبر",
-                    "Sent by Allah as the final messenger for the guidance of mankind."
+                    "A Distributer"
                 ),
                 NamesModel(
-                    "AL-MU’MIN",
-                    "ٱلْمُؤْمِنُ",
-                    "The guardian of faith",
-                    "آفات و وعذاب سے امن و امان رکھنے والا",
-                    "Reciting it 631 times will keep you safe from anguish."
+                    "Aqib",
+                    "عَاقِبٌ",
+                    "The Last"
                 ),
                 NamesModel(
-                    "AL-MUHAYMIN",
-                    "ٱلْمُهَيْمِنُ",
-                    "The protector",
-                    "حفاظت کرنے والا",
-                    "This purifies the soul of a person if it is recited 100 times after taking a bath and offering two rakaats of prayer."
+                    "Faateh",
+                    "فَاتِحٌ",
+                    "The Victor"
                 ),
                 NamesModel(
-                    "AL-AZIZ",
-                    "ٱلْعَزِيزُ",
-                    "The Almighty",
-                    "بڑے اقتدار والا",
-                    "Recitation of this name 41 times after Fajr prayer will make the person independent from others and will earn respect."
+                    "Shahid",
+                    "شَاهِدٌ",
+                    "The Witness"
                 ),
                 NamesModel(
-                    "AL-JABBAR",
-                    "ٱلْجَبَّارُ",
-                    "The compeller",
-                    "زبردست غلبہ رکھنے والا",
-                    "Whoever recites this name several times will not be forced to do anything. He will be safe from cruelty and hardship."
+                    "Hashir",
+                    "حَاشِرٌ",
+                    "The Gatherer"
                 ),
                 NamesModel(
-                    "AL-MUTAKABBIR",
-                    "ٱلْمُتَكَبِّرُ",
-                    "The Majestic",
-                    "عظمت و کبریائی کا سر چشمہ",
-                    "The one who recites this name frequently will earn respect and gain success."
+                    "Rasheed",
+                    "رَشِیدٌ",
+                    "The Guide"
                 ),
                 NamesModel(
-                    "AL-KHAALIQ",
-                    "ٱلْخَالِقُ",
-                    "The Creator",
-                    "وجود بخشنے والا، پیدا کرنے والا",
-                    "Allah will assign an angel to guide the person righteously if he recites this name 100 times continuously for a prescribed limit of 7 days."
+                    "Mashhood",
+                    "مَشهُودٌ",
+                    "He Who is Witnessed"
                 ),
                 NamesModel(
-                    "AL-BAARI",
-                    "ٱلْبَارِئُ",
-                    "The Evolver, The Maker",
-                    "ہر چیز کو عدم سے وجود میں لانے والا",
-                    "This name only signifies that Allah created all things in proportion."
+                    "Basheer",
+                    "بَشِیرٌ",
+                    "The Messenger of Good News"
                 ),
                 NamesModel(
-                    "AL-MUSAWWIR",
-                    "ٱلْمُصَوِّرُ",
-                    "The Fashioner of Forms",
-                    "مخلوقات کی صورت گری کرنے والا",
-                    "Recite this name 21 times and do a Damm on water. Continue this for 7 consecutive days. Use the water for breaking the fast. Insha’Allah, the woman will soon be blessed with a child."
+                    "Nadhir",
+                    "نَزِیرٌ",
+                    "Warner"
                 ),
                 NamesModel(
-                    "AL-GHAFFAAR",
-                    "ٱلْغَفَّارُ",
-                    "The Forgiver",
-                    "بڑا درگزر کرنے والا",
-                    "The Forgiver, The One who forgives the sins of His slaves."
+                    "Dai",
+                    "دَاعٍ",
+                    "The Caller"
                 ),
                 NamesModel(
-                    "AL-QAHHAAR",
-                    "ٱلْقَهَّارُ",
-                    "The All Compelling Subduer",
-                    "اپنی مخلوق پر کامل غلبہ اور اختیاررکھنے والا",
-                    "This name will provide the person with inner peace and will lead the person to the correct place."
+                    "Shafi",
+                    "شَافٍ",
+                    "Healer"
                 ),
                 NamesModel(
-                    "AL-WAHHAB",
-                    "ٱلْوَهَّابُ",
-                    "The Best over",
-                    "بے غرض بخشش اور سخاوت کرنےوالا",
-                    "Reciting it frequently will remove poverty. Reciting it 40 times in the last Sajadah of Chasht prayer will relieve the person from starvation."
+                    "Haadi",
+                    "ھَادٍ",
+                    "Who Guides Right"
                 ),
                 NamesModel(
-                    "AR-RAZZAQ",
-                    "ٱلْرَّزَّاقُ",
-                    "The Provider",
-                    "حاجت روا",
-                    "The person will be provided with livelihood by reciting this name."
+                    "Mahdi",
+                    "مَھدٍ",
+                    "Well Guided"
                 ),
                 NamesModel(
-                    "AL-FATTAH",
-                    "ٱلْفَتَّاحُ",
-                    "The Opener",
-                    "مشکلوں کو حل کرنے والا",
-                    "The reciter of this name will be given success and victory in every aspect of his life."
+                    "Mahi",
+                    "مَاحٍ",
+                    "The Obliterator of Infidelity"
                 ),
                 NamesModel(
-                    "AL-ALIM",
-                    "ٱلْعَلِيمُ",
-                    "The All Knowing",
-                    "ہر چیز جاننے والا",
-                    "The heart of the reciter will be enlightened with the light of Nur."
+                    "Munji",
+                    "مُنجٍ",
+                    "He who saves delivers"
                 ),
                 NamesModel(
-                    "AL-QAABID",
-                    "ٱلْقَابِضُ",
-                    "The Constrictor",
-                    "ہر شے پر قبضہ رکھنے والا",
-                    "This finishes poverty from the house if it is written, and eaten on 4 pieces of food till 40 days."
+                    "Nahi",
+                    "نَاهٍ",
+                    "Safe"
                 ),
                 NamesModel(
-                    "AL-BAASIT",
-                    "ٱلْبَاسِطُ",
-                    "The Expander, The Munificent",
-                    "وسعت دینے والا",
-                    "Repeating this name 10 times after Chasht prayer and rubbing hands with a face will no longer be dependent upon others."
+                    "Rasul",
+                    "رَسُولٌ",
+                    "Messenger"
                 ),
                 NamesModel(
-                    "AL-KHAAFID",
-                    "ٱلْخَافِضُ",
-                    "The Abaser",
-                    "پست کرنے والا",
-                    "Allah will fulfill the need of the person who recites it 500 times. It also acts as a guard from all enemies if a group of people sit in the gathering on the fourth day of fasting and recite this name 70 times each."
+                    "Nabi",
+                    "نَبِىٌ",
+                    "Prophet"
                 ),
                 NamesModel(
-                    "AR-RAFI",
-                    "ٱلْرَّافِعُ",
-                    "The Exalter",
-                    "وہ جو بلندیاں عطا کرتا ہے",
-                    "The one who recites this name 101 times day and night will get wealthier and will be highly regarded in merit."
+                    "Ummi",
+                    "اُمِّىٌ",
+                    "Unlettered"
                 ),
                 NamesModel(
-                    "AL-MU’IZZ",
-                    "ٱلْمُعِزُّ",
-                    "The Giver of Honor",
-                    "عزت دینے والا",
-                    "Reciting this name 140 times after Maghrib prayer either on Monday or on Friday, Allah will make him majestic in the eyes of other people."
+                    "Tihami",
+                    "تِهَامِىٌ",
+                    "From the Tihama"
                 ),
                 NamesModel(
-                    "AL-MUZIL",
-                    "ٱلْمُذِلُّ",
-                    "The Giver of Dishonor",
-                    "ذلت سینے والا",
-                    "Reciting this name 140 times after Maghrib prayer either on Monday or on Friday, Allah will make him majestic in the eyes of other people."
+                    "Hashami",
+                    "هَاشَمِىٌ",
+                    "Family of Hashim"
                 ),
                 NamesModel(
-                    "AS-SAMI’",
-                    "ٱلْسَّمِيعُ",
-                    "The All Hearing",
-                    "بندوں کی سننے والا",
-                    "Allah will fulfill the desire of a person who recites this name 500, 100, or 50 times on Thursday after the Chasht prayer."
+                    "Abtahi",
+                    "اَبطَحِىٌ",
+                    "Belonging to al-Batha"
                 ),
                 NamesModel(
-                    "AL-BASEER",
-                    "ٱلْبَصِيرُ",
-                    "The All Seeing",
-                    "ہر چیز کو دیکھنے والا",
-                    "For the enlightenment of heart and soul, recite this name 100 times after the Jummah prayer."
+                    "Aziz",
+                    "عَزِيزٌ",
+                    "Nobel, Dear"
                 ),
                 NamesModel(
-                    "AL-HAKAM",
-                    "ٱلْحَكَمُ",
-                    "The Judge, The Arbitrator",
-                    "انصاف کرنے والا",
-                    "Secrets will be revealed to the person who recites this name frequently at night."
+                    "Haris Alaikum",
+                    "حَرِيصٌ عَلَيكُم",
+                    "Full of concern for you"
                 ),
                 NamesModel(
-                    "AL-ADL",
-                    "ٱلْعَدْلُ",
-                    "The Utterly Just",
-                    "عدل کرنے والا",
-                    "People will obey you if you will write this name on a piece of bread on Friday."
+                    "Rauf",
+                    "رَؤُف",
+                    "Mild"
                 ),
                 NamesModel(
-                    "AL-LATEEF",
-                    "ٱلْلَّطِيفُ",
-                    "The Subtly Kind, The subtle one",
-                    "بڑا لطیف و کرم کرنے والا",
-                    "To make your affairs get settled accordingly to your will, recite this name 133 times daily."
+                    "Rahim",
+                    "رَحِيمٌ",
+                    "Merciful"
                 ),
                 NamesModel(
-                    "AL-KHABEER",
-                    "ٱلْخَبِيرُ",
-                    "The All Aware",
-                    "باخبر اور آگاہ",
-                    "Reciting this name regularly will make a person a righteous man who is indulged in wrong things."
+                    "Taha",
+                    "طٰهٰ",
+                    "Only Allah knows these word meanings"
                 ),
                 NamesModel(
-                    "AL-HALEEM",
-                    "ٱلْحَلِيمُ",
-                    "The Forbearing, The Indulgent",
-                    "بڑا بردبار اور برداشت کرنے والا",
-                    "Write this name on a piece of paper and wash it with water. Use that water for sprinkling things. This will keep things safe from all types of damages."
+                    "Mujtaba",
+                    "مُجتَبىٰ",
+                    "Elect"
                 ),
                 NamesModel(
-                    "AL-AZEEM",
-                    "ٱلْعَظِيمُ",
-                    "The Magnificent, The Great One",
-                    "بڑی بزرگی والا",
-                    "To earn respect and honor, recite this name several times."
+                    "Tasin",
+                    "طٰسٓ",
+                    "Only Allah knows these word meanings"
                 ),
                 NamesModel(
-                    "AL-GHAFOOR",
-                    "ٱلْغَفُورُ",
-                    "The All Forgiving",
-                    "بڑآ بخشش کرنے والا",
-                    "The All-Forgiving, The Forgiving, The One who forgives a lot."
+                    "Murtada",
+                    "مُرتَضیٰ",
+                    "Content"
                 ),
                 NamesModel(
-                    "ASH-SHAKOOR",
-                    "ٱلْشَّكُورُ",
-                    "The Appreciative",
-                    "بڑا قدر کرنے والا",
-                    "The person will be relieved from all the suffering if he recites this name 41 times daily."
+                    "Ha-mim",
+                    "حٰمٓ",
+                    "Only Allah knows these word meanings"
                 ),
                 NamesModel(
-                    "AL-ALIYY",
-                    "ٱلْعَلِيُّ",
-                    "The Most High",
-                    "بڑی بلندیوں والا",
-                    "The one who keeps this name written on a piece of paper will achieve a high rank and success in all his work."
+                    "Mustafa",
+                    "مُصطَفىٰ",
+                    "Chosen"
                 ),
                 NamesModel(
-                    "AL-KABEER",
-                    "ٱلْكَبِيرُ",
-                    "The Most Great",
-                    "بہت بڑا",
-                    "The reciter of this name 100 times daily will be esteemed by every one."
+                    "Ya-sin",
+                    "يٰسٓ",
+                    "Name Of A Meccan Surah Of The Holy Quran"
                 ),
                 NamesModel(
-                    "AL-HAFEEZ",
-                    "ٱلْحَفِيظُ",
-                    "The Preserver",
-                    "سب کا محافظ، حفاظ تکرنے والا",
-                    "Recite this name and do a Damm on water. Give the water to the ill-mannered child. He will become obedient."
+                    "Aula",
+                    "اَولىٰ",
+                    "Worthier, Most Worthy"
                 ),
                 NamesModel(
-                    "AL-MUQEET",
-                    "ٱلْمُقِيتُ",
-                    "The Nourisher, The Maintainer",
-                    "سب کو روزی اور توانائی دینے والا",
-                    "gives strength and nourishment to His creations and maintains all that exists"
+                    "Muzamil",
+                    "مُزَّمِلٌ",
+                    "Wrapped"
                 ),
                 NamesModel(
-                    "AL-HASEEB",
-                    "ٱلْحَسِيبُ",
-                    "The Reckoner",
-                    "بڑا شمار کنندہ",
-                    "The Ever-Reckoner, The One who takes account of all actions and reckons them on the day of judgment."
+                    "Wali",
+                    "وَلِىٌ",
+                    "Friend"
                 ),
                 NamesModel(
-                    "AL-JALEEL",
-                    "ٱلْجَلِيلُ",
-                    "The Sublime One",
-                    "بلند مرتبے والا",
-                    "Repeating this name frequently will help a person attain respect and honor."
+                    "Mudaththir",
+                    "مُدَّثِّرٌ",
+                    "Covered"
                 ),
                 NamesModel(
-                    "AL-KAREEM",
-                    "ٱلْكَرِيمُ",
-                    "The Bountiful, The Generous",
-                    "بڑا کرم کرنے والا",
-                    "To earn a lot of respect in this world and Hereafter, recite this name many times before going to sleep."
+                    "Matin",
+                    "مَتِينٌ",
+                    "Firm"
                 ),
                 NamesModel(
-                    "AR-RAQEEB",
-                    "ٱلْرَّقِيبُ",
-                    "The Watchful",
-                    "بڑا نگہبان",
-                    "Recite this name seven times and do a Damm on yourself or your family. This will ensure safety under Allah’s protection."
+                    "Musaddiq",
+                    "مُصَدِّقٌ",
+                    "Who Declares For True"
                 ),
                 NamesModel(
-                    "AL-MUJEEB",
-                    "ٱلْمُجِيبُ",
-                    "The Responsive, The Answerer",
-                    "دعائیں قبول کرنے والا",
-                    "If you want an answer to any of your appeals, then you will get it if you recite this name frequently."
+                    "Tayyab",
+                    "طَيِّبٌ",
+                    "Good"
                 ),
                 NamesModel(
-                    "AL-WAASI’",
-                    "ٱلْوَاسِعُ",
-                    "The Vast, The All Encompassing, The All-Embracing",
-                    "بڑی وسعت والا",
-                    "Allah opens the doors of income if someone recites this name many times. His difficulties in earning be vanished."
+                    "Nasir",
+                    "نَاصِرٌ",
+                    "Helper"
                 ),
                 NamesModel(
-                    "AL-HAKEEM",
-                    "ٱلْحَكِيمُ",
-                    "The Wise",
-                    "بڑی حکمت والا",
-                    "This name, when recited, removes the difficulties of the work."
+                    "Mansoor",
+                    "مَنصُورٌ",
+                    "Helped (by Allah)"
                 ),
                 NamesModel(
-                    "AL-WADUD",
-                    "ٱلْوَدُودُ",
-                    "The Loving, The Kind One",
-                    "بڑا محبت کرنے والا",
-                    "This name helps in resolving a disagreement between two people if one gives the other person food after reciting this name 1000 times in his food."
+                    "Misbah",
+                    "مِصبَاحٌ",
+                    "Like a Lamp"
                 ),
                 NamesModel(
-                    "AL-MAJEED",
-                    "ٱلْمَجِيدُ",
-                    "The Most Glorious One",
-                    "بڑی بزرگی والا",
-                    "This name bestows a person with glory."
+                    "Amir",
+                    "اٰمِرٌ",
+                    "Commander"
                 ),
                 NamesModel(
-                    "AL-BA’ITH",
-                    "ٱلْبَاعِثُ",
-                    "The Raiser of Dead, The Resurrector",
-                    "مردوں کو زندہ کرنے والا",
-                    "This name makes a person God-fearing and therefore, it leads him to the righteous path."
+                    "Hijazi",
+                    "حِجَازِىٌ",
+                    "From the Hijaz"
                 ),
                 NamesModel(
-                    "ASH-SHAHEED",
-                    "ٱلْشَّهِيدُ",
-                    "The Witness",
-                    "حاضر و ناظر",
-                    "Recite this name 21 times with the hand placed on the head of the disobedient person. Insha’Allah, he will become obedient."
+                    "Nazari",
+                    "نَزَارِىٌ",
+                    "Of Nazareth"
                 ),
                 NamesModel(
-                    "AL-HAQQ",
-                    "ٱلْحَقُّ",
-                    "The Truth, The Real",
-                    "برحق و برقرار",
-                    "If you lost something, then recite this name."
+                    "Quraishi",
+                    "قُرَیشِی",
+                    "From the Clan Quraish"
                 ),
                 NamesModel(
-                    "AL-WAKEEL",
-                    "ٱلْوَكِيلُ",
-                    "The Trustee, The Dependable",
-                    "بڑا کار ساز",
-                    "Allah will protect that person from drowning or burning in the fire if he recites this name frequently."
+                    "Mudari",
+                    "مُضَرِىٌ",
+                    "From the tribe Mudar"
                 ),
                 NamesModel(
-                    "AL-QAWWIYY",
-                    "ٱلْقَوِيُّ",
-                    "The Most Strong",
-                    "بڑی طاقت و قوت والا",
-                    "This keeps a person safe from the harm of the enemy if he is unable to defeat the enemy."
+                    "Nabi-at-tauba",
+                    "نَبِیُّ التَّوبَۃ",
+                    "The Prophet of Repentance"
                 ),
                 NamesModel(
-                    "AL-MATEEN",
-                    "ٱلْمَتِينُ",
-                    "The Firm One, The Steadfast",
-                    "انتہائی مضبوط و مستحکم",
-                    "This helps a person to get rid of all types of troubles."
+                    "Hafiz",
+                    "حَافِظٌ",
+                    "Preserver"
                 ),
                 NamesModel(
-                    "AL-WALIYY",
-                    "ٱلْوَلِيُّ",
-                    "مدد گار اور حمایتی",
-                    "دوست",
-                    "Reciting this name makes the person closer to Allah."
+                    "Kamil",
+                    "كَامِلٌ",
+                    "Perfect"
                 ),
                 NamesModel(
-                    "AL-HAMEED",
-                    "ٱلْحَمِيدُ",
-                    "The All Praiseworthy",
-                    "تعریف کے لائق",
-                    "The one who recites this name will be praised and loved."
+                    "Sadiq",
+                    "صَادِقٌ",
+                    "Sincere"
                 ),
                 NamesModel(
-                    "AL-MUHSEE",
-                    "ٱلْمُحْصِيُ",
-                    "The Reckoner",
-                    "اپنے علم اور شمار میں رکھنے والا",
-                    "This name provides ease to the person if he is afraid of being questioned on the Day of Resurrection."
+                    "Amin",
+                    "اَمِينٌ",
+                    "Trustworthy"
                 ),
                 NamesModel(
-                    "AL-MUBDI",
-                    "ٱلْمُبْدِئُ",
-                    "The Originator",
-                    "پیدا کرنے والا",
-                    "A pregnant woman will be safe from danger while aborting if she repeats this name several times."
+                    "Abdullah",
+                    "عَبدُاللّٰ",
+                    "Allah's servant"
                 ),
                 NamesModel(
-                    "AL-MUEED",
-                    "ٱلْمُعِيدُ",
-                    "The Restorer",
-                    "پہلی بار پیدا کرنے والا",
-                    "Reciting this name 70 times will bring the person who has left home within 7 days, safe and secure."
+                    "Kalim Allah",
+                    "كَلِيمُ اللّٰ",
+                    "He to whom Allah has Talked"
                 ),
                 NamesModel(
-                    "AL-MUHYI",
-                    "ٱلْمُحْيِى",
-                    "The Giver of Life",
-                    "زندگی دینے والا",
-                    "This name reduces the burden of a person if recited 7 times every day."
+                    "Habib Allah",
+                    "حَبِیبُ اللہ",
+                    "Allah beloved friend"
                 ),
                 NamesModel(
-                    "AL-MUMEET",
-                    "ٱلْمُمِيتُ",
-                    "The Creator of Death",
-                    "موت دینے والا",
-                    "This name destroys the enemy completely."
+                    "Naji Allah",
+                    "نَجِیُّ اللہ",
+                    "Allah Intimate friend"
                 ),
                 NamesModel(
-                    "AL-HAYYU",
-                    "ٱلْحَىُّ",
-                    "The Alive",
-                    "ہمیشہ ہمیشہ زندہ رہنے والا",
-                    "The reciter of this name will have a long life."
+                    "Safi Allah",
+                    "صَفِیُّ اللہ",
+                    "Allah sincere friend"
                 ),
                 NamesModel(
-                    "AL-QAYYOOM",
-                    "ٱلْقَيُّومُ",
-                    "قائم رکھنے اور سنبھالنے والا",
-                    "The One who remains and does not end.",
-                    "The one repeating this name will remain active."
+                    "Khatam Ul-Anbia",
+                    "خَاتِمُ الانَبِيآء",
+                    "Seal of the Prophet"
                 ),
                 NamesModel(
-                    "AL-WAAJID",
-                    "ٱلْوَاجِدُ",
-                    "The Finder",
-                    "ہر چیز کا پانے والا",
-                    "This name increases the richness of the heart."
+                    "Hasib",
+                    "حَسِيبٌ",
+                    "Respected"
                 ),
                 NamesModel(
-                    "AL-MAAJID",
-                    "ٱلْمَاجِدُ",
-                    "The Noble",
-                    "بزرگی اور بڑائی والا",
-                    "This name enlightens the heart of its reciter."
+                    "Mujib",
+                    "مُجِيبٌ",
+                    "Complying, Replying"
                 ),
                 NamesModel(
-                    "AL-WAAHID",
-                    "ٱلْوَاحِدُ",
-                    "The Unique One",
-                    "بے مثال، اکیلا",
-                    "Reciting this name 1000 times in silence alone will vanish the fear from the heart."
+                    "Shakoor",
+                    "شَكُورٌ",
+                    "Most Grateful"
                 ),
                 NamesModel(
-                    "AL-AHAD",
-                    "ٱلْأَحَد",
-                    "اکیلا",
-                    "The One",
-                    "Secrets will be revealed to the person who recites this name 1000 times."
+                    "Muqtasid",
+                    "مُقتَصِدٌ",
+                    "Adopting a middle course"
                 ),
                 NamesModel(
-                    "AS-SAMAD",
-                    "ٱلْصَّمَدُ",
-                    "The Eternal",
-                    "بے نیاز جو کسی کام کا محتاج نہیں",
-                    "Allah will fulfill all the needs of the person who recites this name many times."
+                    "Rasul al-rahmah",
+                    "رَسُولُ الرَّحمَةِ",
+                    "The Messenger of mercy"
                 ),
                 NamesModel(
-                    "AL-QAADIR",
-                    "ٱلْقَادِرُ",
-                    "The All Able",
-                    "بڑی قدرت والا",
-                    "Allah fulfills all the desires of the person who recites this name often."
+                    "Qawi",
+                    "قَوِىٌ",
+                    "Strong"
                 ),
                 NamesModel(
-                    "AL-MUQTADIR",
-                    "ٱلْمُقْتَدِرُ",
-                    "The Powerful",
-                    "بڑی قدرت والا",
-                    "The reciter will become aware of the truth."
+                    "Hafi",
+                    "حَفِىٌ",
+                    "Well-Informed"
                 ),
                 NamesModel(
-                    "AL-MUQADDIM",
-                    "ٱلْمُقَدِّمُ",
-                    "The Expediter, He who brings forward",
-                    "بڑی قدرت والا",
-                    "Reciting this name on the battlefield removes all the fear and keeps the person safe from harm."
+                    "Mamoon",
+                    "مَامُونٌ",
+                    "Trusted"
                 ),
                 NamesModel(
-                    "AL-MU’AKHKHIR",
-                    "ٱلْمُؤَخِّرُ",
-                    "The Delayer, He who puts far away",
-                    "پیچھے رکھنے والا",
-                    "Reciting this name in the heart 100 times enriches the person’s heart with the love of Allah. All his worldly desires will be removed as no other love will ever replace his heart."
+                    "Ma'lum",
+                    "مَعلُومٌ",
+                    "Well-known"
                 ),
                 NamesModel(
-                    "AL-AWWAL",
-                    "ٱلأَوَّلُ",
-                    "The First",
-                    "سب سے پہلے",
-                    "If recited 40 times for 40 days, it will give a child to a family who is not blessed with one. Moreover, a traveler will reach home safe and sound if he recites this name 1000 times on Friday."
+                    "Haqq",
+                    "حَقٌ",
+                    "Truth"
                 ),
                 NamesModel(
-                    "AL-AKHIR",
-                    "ٱلْآخِرُ",
-                    "The Last",
-                    "سب کے بعد",
-                    "The reciter of this name will have a good life and a good death."
+                    "Mubeen",
+                    "مُبِينٌ",
+                    "Clear, Evident"
                 ),
                 NamesModel(
-                    "AZ-ZAAHIR",
-                    "ٱلْظَّاهِرُ",
-                    "The Manifest, The All Victorious",
-                    "ظاہر و آشکار",
-                    "The reciter’s heart will be enlightened with Noor (the divine light) if this name is recited 15 times after the Jummah prayer on Friday."
+                    "Mutti",
+                    "مُطِيعٌ",
+                    "Obedient"
                 ),
                 NamesModel(
-                    "AL-BAATIN",
-                    "ٱلْبَاطِنُ",
-                    "The Hidden, The All Encompassing",
-                    "پوشیدہ و نہاں",
-                    "With the recitation of this name only three times every day, he will be able to know the truth in all things."
+                    "Awwal",
+                    "اَوَّلٌ",
+                    "The First"
                 ),
                 NamesModel(
-                    "AL-WAALI",
-                    "ٱلْوَالِي",
-                    "The Patron, The Governor",
-                    "سر پرست، متصرف",
-                    "This name keeps the house safe from all dangers."
+                    "Akhir",
+                    "اٰخِرٌ",
+                    "Last"
                 ),
                 NamesModel(
-                    "AL-MUTA’ALI",
-                    "ٱلْمُتَعَالِي",
-                    "The Most Exalted",
-                    "سب سے بلند و برتر",
-                    "Whosoever recites this name will become closer to Allah."
+                    "Zahir",
+                    "ظَاهِرٌ",
+                    "Outward, External"
                 ),
                 NamesModel(
-                    "AL-BARR",
-                    "ٱلْبَرُّ",
-                    "The Source of All Goodness",
-                    "تمام اچھائیوں کا سر چشمہ",
-                    "This name will make the future of the child of reciter free from misfortune."
+                    "Batin",
+                    "بَاطِنٌ",
+                    "Internal, Inner"
                 ),
                 NamesModel(
-                    "AT-TAWWAAB",
-                    "ٱلْتَّوَّابُ",
-                    "The Acceptor of Repentance",
-                    "توبہ قبول کرنے والا",
-                    "Dua’s are accepted if this name is recited frequently."
+                    "Yateem",
+                    "يَتِيمٌ",
+                    "The Acceptor of Repentance"
                 ),
                 NamesModel(
-                    "AL-MUNTAQIM",
-                    "ٱلْمُنْتَقِمُ",
-                    "The Avenger",
-                    "بدلہ لینے والا",
-                    "This helps gain victory against enemies."
+                    "Karim",
+                    "كَرِيمٌ",
+                    "Generous"
                 ),
                 NamesModel(
-                    "AL-AFUWW",
-                    "ٱلْعَفُوُّ",
-                    "معاف کرنے والا",
-                    "The Forgiver, The One with wide forgiveness.",
-                    "This name helps a person in the forgiveness of all his sins."
+                    "Hakim",
+                    "حَكِيمٌ",
+                    "Wise, Judicious"
                 ),
                 NamesModel(
-                    "AR-RA’OOF",
-                    "ٱلْرَّؤُفُ",
-                    "The Compassionate, The All Pitying",
-                    "بڑا مشفق و مہربان",
-                    "Allah blesses the one who recites this name more often."
+                    "Sayyed",
+                    "سَيِّدٌ",
+                    "Beloved"
                 ),
                 NamesModel(
-                    "MAALIK-UL-MULK",
-                    "مَالِكُ ٱلْمُلْكُ",
-                    "The Eternal Owner of All Sovereignty",
-                    "ملکوں کا مالک",
-                    "This name gives respect to its reciter among people."
+                    "Siraj",
+                    "سِرَاجٌ",
+                    "Lamp"
                 ),
                 NamesModel(
-                    "ZUL-JALAALI-WAL-IKRAM",
-                    "ذُو ٱلْجَلَالِ وَٱلْإِكْرَامُ",
-                    "The Lord of Majesty and Bounty",
-                    "عظمت و جلال  اور انعام و اکرام والا",
-                    "This name removes poverty and makes a person rich."
+                    "Munir",
+                    "مُنِيرٌُ",
+                    "Radiant"
                 ),
                 NamesModel(
-                    "AL-MUQSIT",
-                    "ٱلْمُقْسِطُ",
-                    "The Equitable, The Requiter",
-                    "عدل و انصاف قائم رکھنے والا",
-                    "This name provides protection from the harm of a devil."
+                    "Muharram",
+                    "مُحَرَّمٌ",
+                    "Forbidden, Immune"
                 ),
                 NamesModel(
-                    "AL-JAAMI’",
-                    "ٱلْجَامِعُ",
-                    "The Gatherer, The Unifier",
-                    "جمع کرنے والا",
-                    "With the power and glory of this name, you will be able to find lost things."
+                    "Mukarram",
+                    "مُكَرَّمٌ",
+                    "Honored"
                 ),
                 NamesModel(
-                    "AL-GHANIYY",
-                    "ٱلْغَنيُّ",
-                    "The Self-Sufficient",
-                    "The One who does not need the creation.",
-                    "Reciting this name 70 times will make a person free from all needs."
+                    "Mubashir",
+                    "مُبَشِرٌ",
+                    "Bringer of Good News"
                 ),
                 NamesModel(
-                    "AL-MUGHNI",
-                    "ٱلْمُغْنِيُّ",
-                    "The Enricher",
-                    "خود کفیل و بےپرواہ",
-                    "Reciting this name 1000 times for ten consecutive Fridays will make a person become self-sufficient."
+                    "Mudakir",
+                    "مُزَكِّرٌ",
+                    "Remember, Preacher"
                 ),
                 NamesModel(
-                    "AL-MAANI’",
-                    "ٱلْمَانِعُ",
-                    "The Most Preventer",
-                    "توانگر بنانے والا",
-                    "Recitation of this name 20 times at bedtime provides a happy family life."
+                    "Mutahhar",
+                    "مُطَهَّرٌ",
+                    "Purified"
                 ),
                 NamesModel(
-                    "AD-DAARR",
-                    "ٱلْضَّارُ",
-                    "The Distresser, The Harmer",
-                    "ضرر پہنچانے والا",
-                    "This name helps a person in gaining peace if it is read 20 times on Friday nights."
+                    "Qareeb",
+                    "قَريِبٌ",
+                    "Near"
                 ),
                 NamesModel(
-                    "AN-NAAFI’",
-                    "ٱلْنَّافِعُ",
-                    "The Propitious, The Benefactor",
-                    "نفع پہنچانے والا",
-                    "This name gives success on every good act if it is started with the recitation of this name 41 times."
+                    "Khalil",
+                    "خَلِيلٌ",
+                    "The True Friend"
                 ),
                 NamesModel(
-                    "AN-NOOR", "ٱلْنُّورُ", "The Light",
-                    "نو راور انوار بخشنے والا",
-                    "This name enlightens the inside of the person."
+                    "Mad'u", "مَدعُوٌ", "Who is called"
                 ),
                 NamesModel(
-                    "AL-HAADI",
-                    "ٱلْهَادِي",
-                    "The Guide",
-                    "سیدھی راہ دکھانے والا",
-                    "1100 times of the recitation of this name makes a person fulfill his needs."
+                    "Jawwad",
+                    "جَوَّادٌ",
+                    "The Generous"
                 ),
                 NamesModel(
-                    "AL-BADEE’",
-                    "ٱلْبَدِيعُ",
-                    "The Incomparable",
-                    "بے مثال چیزوں کا پیدا کرنے والا",
-                    "To gain relief from any type of distress, a person should recite this name 70,000 times."
+                    "Khatim",
+                    "خَاتِمٌ",
+                    "The Finalizer"
                 ),
                 NamesModel(
-                    "AL-BAAQI'",
-                    "ٱلْبَاقِي",
-                    "The Everlasting",
-                    "ہمیشہ باقی رہنے والا",
-                    "To ensure that all your good deeds are accepted, recite this name 100 times every Friday night."
+                    "Adil",
+                    "عَادِلٌ",
+                    "Fair"
                 ),
                 NamesModel(
-                    "AL-WAARIS",
-                    "ٱلْوَارِثُ",
-                    "The Supreme Inheritor of All",
-                    "سب کے بعد موجود رہنے والا",
-                    "A person will remain safe from sorrow and distress if he recites this name 100 times after the sunrise."
+                    "Shahir",
+                    "شَھِیر",
+                    "Well-Known"
                 ),
                 NamesModel(
-                    "AR-RASHEED",
-                    "ٱلْرَّشِيدُ",
-                    "The Guide to The Right Path",
-                    "صحیح راہ پر چلانے والا",
-                    "To complete a task you are unable to do, recite this name 1000 times between Maghrib and Isha prayer."
+                    "Shaheed",
+                    "شَھِید",
+                    "Witnessing, Martyr"
                 ),
                 NamesModel(
-                    "AS-SABOOR",
-                    "ٱلْصَّبُورُ",
-                    "The Most Patient",
-                    "بڑے صبر و تحمل والا",
-                    "The person will be rescued from his difficulty if he recites this name 3000 times."
+                    "Rasul al-malahim",
+                    "رَسُولُ المَلاَحِم",
+                    "The Messenger of the Battles of Last Day"
                 )
             )
         }
