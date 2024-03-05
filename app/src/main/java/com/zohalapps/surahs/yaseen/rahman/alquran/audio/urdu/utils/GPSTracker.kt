@@ -132,5 +132,20 @@ class GPSTracker(private val context: Context) : Service(), LocationListener {
         return null
     }
 
+    override fun onProviderDisabled(provider: String) {
+        super.onProviderDisabled(provider)
+        if (provider == LocationManager.GPS_PROVIDER) {
+            // GPS provider is disabled
+            Log.i("GPSTracker", "GPS provider disabled")
+            // You can show a message to the user indicating that GPS is disabled
+            // or prompt the user to enable GPS
+        } else if (provider == LocationManager.NETWORK_PROVIDER) {
+            // Network provider is disabled
+            Log.i("GPSTracker", "Network provider disabled")
+            // You can show a message to the user indicating that network location services are disabled
+            // or prompt the user to enable network location services
+        }
+    }
+
 
 }

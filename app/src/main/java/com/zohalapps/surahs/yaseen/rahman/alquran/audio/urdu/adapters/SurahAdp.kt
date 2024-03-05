@@ -14,7 +14,7 @@ class SurahAdp(fragment: Fragment, private val list: List<SurahModel>) :
 
 
     override fun createFragment(position: Int): Fragment {
-        return SurahImageFragment(list[position].image)
+        return SurahImageFragment.newInstance(list[position].image)
     }
 
 

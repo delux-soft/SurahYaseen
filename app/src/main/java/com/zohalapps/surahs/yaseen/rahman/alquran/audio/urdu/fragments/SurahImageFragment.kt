@@ -5,12 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import com.bumptech.glide.Glide
 import com.zohalapps.surahs.yaseen.rahman.alquran.audio.urdu.databinding.FragmentSurahImageBinding
 
-class SurahImageFragment(private val path: String) : Fragment() {
+class SurahImageFragment : Fragment() {
     private var _surahBinding: FragmentSurahImageBinding? = null
     private val surahBinding get() = _surahBinding!!
+
+    private val path: String
+        get() = requireArguments().getString(PATH)
+            ?: throw IllegalArgumentException("Argument required")
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,5 +38,15 @@ class SurahImageFragment(private val path: String) : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _surahBinding = null
+    }
+
+    companion object {
+
+        private const val PATH = "path"
+        fun newInstance(path: String) = SurahImageFragment().apply {
+            arguments = bundleOf(
+                PATH to path
+            )
+        }
     }
 }
